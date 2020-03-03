@@ -5,6 +5,6 @@ class Deck < ApplicationRecord
   pg_search_scope :global_search,
   against: [:name],
   associated_against: {
-    user: [ :email]
+    user: [:email]
   }
 end
