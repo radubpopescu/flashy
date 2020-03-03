@@ -1,0 +1,11 @@
+<h1>Categories#index</h1>
+<ul>
+  <% @categories.each do |category| %>
+    <li><%= category.name %></li>
+  <% end %>
+</ul>
+
+<%= simple_form_for @favorite_category do |f| %>
+   <%= f.input :category, as: :check_boxes, collection: @categories,label_method: category.name, value_method: category.id,:label => "Category" ,:include_blank => false %>
+   <%= f.button :submit %>
+<%end%>
