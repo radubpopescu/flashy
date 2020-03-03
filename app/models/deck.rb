@@ -6,7 +6,11 @@ class Deck < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :global_search,
   against: [:name],
-  associated_against: {
-    user: [:email]
+  associated_against:{
+    user: [:email],
+    category: [:name]
+  },
+  using: {
+    tsearch: {prefix: true}
   }
 end
