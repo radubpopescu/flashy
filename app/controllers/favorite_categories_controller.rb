@@ -4,12 +4,10 @@ class FavoriteCategoriesController < ApplicationController
   end
 
   def create
-    @favorite_category = FavoriteCategory.new(favorite_category_params)
-    if @favorite_category.save
-      redirect to decks_path
-    else
-      render :new
+    favorite_category_params[:category_id].each do |category_id|
+      @favorite_category = FavoriteCategory.create(category_id: category_id, user_id: current_user.id)
     end
+    redirect_to root_path
   end
 
   def update
@@ -24,6 +22,6 @@ class FavoriteCategoriesController < ApplicationController
   private
 
   def favorite_category_params
-    params.require(:favorite_category).permit(:user_id, :category_id)
+    params.require(:favorite_category).permit(category_id: [])
   end
 end

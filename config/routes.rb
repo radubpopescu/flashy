@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   resources :decks do
     resources :cards
   end
-  resources :categories, only: [:index]
+  resources :categories
+  resources :favorite_categories, only: [:new, :create]
   devise_for :users
-  root to: 'categories#index'
+  current_user.favorite_categories.null? ? root to: 'categories#index' : root to: 'decks#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
