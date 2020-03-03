@@ -1,2 +1,26 @@
-<h1>Decks#show</h1>
-<p>Find me in app/views/decks/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 mt-4">
+
+      <h1><%= @deck.name %></h1>
+      <p><%= @deck.category.name %></p>
+      <p><%= @deck.description %></p>
+
+      </br>
+
+      <p>You still have <strong>counting</strong> cards.</p>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-body" style="height: 200px;">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
