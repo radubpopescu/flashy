@@ -1,7 +1,9 @@
 class Deck < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  include PGSearch::Model
+  has_many :cards, dependent: :destroy
+
+  include PgSearch::Model
   pg_search_scope :global_search,
   against: [:name],
   associated_against: {

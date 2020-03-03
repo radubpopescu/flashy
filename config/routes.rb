@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :favorite_categories, only: [:new, :create]
   devise_for :users
 
-  current_user.favorite_categories.null? ? root to: 'categories#index' : root to: 'decks#index'
+  root to: 'decks#index'
+
 end
