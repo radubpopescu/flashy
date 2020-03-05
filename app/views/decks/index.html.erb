@@ -1,10 +1,26 @@
-<h1>Decks#index</h1>
-<p>Find me in app/views/decks/index.html.erb</p>
-<%= render 'search' %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 mt-4">
+      <h1>Look for the best flashy cards</h1>
+
+      <%= render 'search' %>
+
+      <ul style="list-style-type:none">
+        <li>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <% @decks.each do |deck| %>
+              <h2 class="card-title"><%= deck.name %></h2>
+              <p class="card-text"><%= deck.description %></p>
+              <%= link_to "Lets Play", deck_path(deck), class: "card-link" %>
+            <% end %>
+          </div>
+        </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
 
 
-<ul>
-  <% @decks.each do |deck| %>
-    <li><%= link_to deck.name, deck_path(deck) %></li>
-  <% end %>
-</ul>

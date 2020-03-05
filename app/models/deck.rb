@@ -1,6 +1,7 @@
 class Deck < ApplicationRecord
   belongs_to :user
   belongs_to :category
+<<<<<<< HEAD
   has_many :cards, dependent: :destroy
 
   include PgSearch::Model
@@ -13,4 +14,7 @@ class Deck < ApplicationRecord
   using: {
     tsearch: {prefix: true}
   }
+=======
+  validates :name, presence: true
+>>>>>>> master
 end

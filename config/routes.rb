@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :categories
   resources :favorite_categories, only: [:new, :create]
   devise_for :users
-
   root to: 'decks#index'
 
 end
