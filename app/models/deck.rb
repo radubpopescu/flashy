@@ -1,12 +1,12 @@
 class Deck < ApplicationRecord
   belongs_to :user
   belongs_to :category
-<<<<<<< HEAD
   has_many :cards, dependent: :destroy
+  validates :name, presence: true
 
   include PgSearch::Model
-  pg_search_scope :global_search,
-  against: [:name],
+  pg_search_scope :deck_search,
+  against: [:name, :description],
   associated_against:{
     user: [:email],
     category: [:name]
@@ -14,7 +14,4 @@ class Deck < ApplicationRecord
   using: {
     tsearch: {prefix: true}
   }
-=======
-  validates :name, presence: true
->>>>>>> master
 end
