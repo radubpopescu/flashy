@@ -8,7 +8,6 @@ class FavoriteCategoriesController < ApplicationController
     favorite_category_params[:category_ids].each do |category_id|
       FavoriteCategory.create(category_id: category_id, user_id: current_user.id)
     end
-    if current_user.favorite_categories.any?
       redirect_to root_path
   end
 
