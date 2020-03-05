@@ -1,13 +1,11 @@
-<div class="navbar navbar-expand-sm navbar-light vertical-nav">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "menu-bar.png"%>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<div id= "vertical-nav" class="navbar navbar-expand-sm navbar-light">
+  <button style="background-color: transparent; border: none;">
+      <%= image_tag "menu-bar.png"%>
   </button>
+</div>
 
- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+ <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <ul class="nav nav-pills nav-stacked">
       <% if user_signed_in? %>
@@ -31,7 +29,6 @@
         </li>
       <% end %>
     </ul>
-  </div>
-</div>
+  </div> -->
 
 
