@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :decks, dependent: :destroy
   has_many :categories, through: :decks
-  has_many :favorite_categories
+  has_many :favorite_categories, dependent: :destroy
 
   validates :username, presence: false
 end
