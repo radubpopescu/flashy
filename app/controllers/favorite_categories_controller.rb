@@ -4,24 +4,16 @@ class FavoriteCategoriesController < ApplicationController
   end
 
   def create
-    favorite_category_params[:category_id].each do |category_id|
-      @favorite_category = FavoriteCategory.create(category_id: category_id, user_id: current_user.id)
+    current_user.favorite_categories.destroy_all
+    favorite_category_params[:category_ids].each do |category_id|
+      FavoriteCategory.create(category_id: category_id, user_id: current_user.id)
     end
-    redirect_to root_path
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
-  def edit
+      redirect_to root_path
   end
 
   private
 
   def favorite_category_params
-    params.require(:favorite_category).permit(category_id: [])
+    params.require(:user).permit(category_ids: [])
   end
 end
