@@ -7,7 +7,7 @@ class DecksController < ApplicationController
     # response.headers['Set-Cookie'] = 'Secure;SameSite=None'
 
     if params[:search]
-      @decks = Deck.deck_search(params[:search][:query])
+      @decks = Deck.global_search(params[:search][:name])
     else
       @decks = Deck.all
     end
