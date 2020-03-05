@@ -5,7 +5,7 @@ class Deck < ApplicationRecord
   validates :name, presence: true
 
   include PgSearch::Model
-  pg_search_scope :deck_search,
+  pg_search_scope :global_search,
   against: [:name, :description],
   associated_against:{
     user: [:email],
