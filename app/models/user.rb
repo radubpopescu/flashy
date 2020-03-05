@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :decks, dependent: :destroy
   has_many :categories, through: :decks
   has_many :favorite_categories
+
+  validates :username, presence: false
 end

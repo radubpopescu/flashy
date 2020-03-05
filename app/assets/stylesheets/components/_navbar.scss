@@ -1,12 +1,125 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+// .navbar-lewagon {
+//   // justify-content: space-between;
+//   // background: white;
+//   background: $background;
+//   box-shadow: 4px 0px 23px rgba(143, 0, 255, 0.55);
+//   position: absolute;
+//   width: 115px;
+//   height: 720px;
+//   left: 0px;
+//   top: 0px;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 70px;
+// }
+
+.vertical-nav {
+  // min-width: 17rem;
+  width: 17rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 70px;
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -17rem;
 }
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+}
+
+
+// .about {
+//   position: absolute;
+//   width: 70px;
+//   height: 42px;
+//   left: 21px;
+//   top: 177px;
+//   font-family: Avenir;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 24px;
+//   line-height: 33px;
+//   display: flex;
+//   align-items: center;
+//   letter-spacing: 0.01em;
+//   font-color: $white;
+// }
+
+// .home {
+//   position: absolute;
+//   width: 70px;
+//   height: 42px;
+//   left: 21px;
+//   top: 253px;
+//   font-family: Avenir;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 24px;
+//   line-height: 33px;
+//   display: flex;
+//   align-items: center;
+//   letter-spacing: 0.01em;
+//   font-color: $white;
+// }
+
+// .login {
+//   position: absolute;
+//   width: 70px;
+//   height: 42px;
+//   left: 21px;
+//   top: 329px;
+//   font-family: Avenir;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 24px;
+//   line-height: 33px;
+//   display: flex;
+//   align-items: center;
+//   letter-spacing: 0.01em;
+//   font-color: $white;
+// }
+
+// .menu-bar {
+//   position: absolute;
+//   left: 2.66%;
+//   right: 93.83%;
+//   top: 12.36%;
+//   bottom: 83.06%;
+//   background: $background;
+// }

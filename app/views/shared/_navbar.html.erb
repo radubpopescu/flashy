@@ -1,21 +1,24 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon"> -->
+<!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://icons-for-free.com/iconfiles/png/512/character+speedster+super+hero+the+flash+icon-1320166752997452047.png" %>
-    <% end %>
+    <%= image_tag "menu-bar.png"%>
+  <% end %> -->
 
+<!--
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+ -->
 
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ <!--  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <ul class="nav nav-pills nav-stacked">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "About", "#", class: "nav-link about" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to "Home", "#", class: "nav-link home" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -26,10 +29,93 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
+        <li class="nav-item login">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>
   </div>
 </div>
+ -->
+
+ <!-- Vertical navbar -->
+
+<div class="vertical-nav bg-white" id="sidebar">
+  <div class="py-4 px-3 mb-4 bg-light">
+    <div class="media d-flex align-items-center"><%= image_tag "avatar-test.png", class: "mr-3 rounded-circle img-thumbnail shadow-sm",  style: "width: 65px; height: 65px;" %>
+      <div class="media-body">
+        <h3 class="m-0"><%= link_to current_user.username %> </h3>
+      </div>
+    </div>
+  </div>
+
+ <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
+
+  <% if user_signed_in? %>
+    <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+       <a href="#" class="nav-link text-dark font-italic bg-light">
+                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                 Home
+             </a>
+      </li>
+      <li class="nav-item">
+       <a href="#" class="nav-link text-dark font-italic">
+                 <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+                 About
+             </a>
+      </li>
+      <li class="nav-item">
+       <a href="#" class="nav-link text-dark font-italic">
+                 <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+                 Services
+             </a>
+      </li>
+      <li class="nav-item">
+       <a href="#" class="nav-link text-dark font-italic">
+                 <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+                 Gallery
+             </a>
+      </li>
+    </ul>
+  <% else %>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic bg-light">
+        <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+        Log in
+      </a>
+    </li>
+
+  <% end %>
+
+  <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+        Area charts
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+        Bar charts
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
+        Pie charts
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+        Line charts
+        </a>
+    </li>
+  </ul>
+</div>
+
+
