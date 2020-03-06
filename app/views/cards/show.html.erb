@@ -1,2 +1,14 @@
-<h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 mt-4">
+      <h1><%= @deck.name %></h1>
+
+      <%= @card.front %>
+
+      <br>
+      <input type="text">
+
+      <%= link_to 'Next', deck_card_path(@deck, @card.id + 1), class: 'btn btn-primary'%>
+    </div>
+  </div>
+</div>

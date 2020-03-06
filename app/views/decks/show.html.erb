@@ -7,7 +7,7 @@
       <p><%= @deck.description %></p>
 
       </br>
-
+      <%= link_to 'Play', deck_card_path(@deck, @deck.cards.first.id) %>
       <p>You still have <strong>counting</strong> cards.</p>
       <div class="progress">
         <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
