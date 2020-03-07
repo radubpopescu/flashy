@@ -3,12 +3,20 @@
     <div class="col-sm-6 mt-4">
       <h1><%= @deck.name %></h1>
 
-      <%= @card.front %>
+      <p>You still need to master
+        <strong><%= @count_card %></strong>
+      cards in this deck</p>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= @percentage %></div>
+      </div>
 
-      <br>
+      <p><%= @card.front %></p>
       <input type="text">
 
-      <%= link_to 'Next', deck_card_path(@deck, @card.id + 1), class: 'btn btn-primary'%>
+      <button id="flip" type="submit">flip card</button>
+
+      <%= link_to 'I knew it!', deck_card_path(@deck, @card.id + 1), style: 'display:none', class: 'btn btn-primary', id: 'iknow'%>
+      <%= link_to 'I didn\'t know!', deck_card_path(@deck, @card.id + 1), style: 'display:none', class: 'btn btn-danger', id: 'idk'%>
     </div>
   </div>
 </div>
