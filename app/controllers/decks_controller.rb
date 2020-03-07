@@ -4,7 +4,6 @@ class DecksController < ApplicationController
   def index
     # raise
     redirect_to categories_path if current_user.favorite_categories.empty?
-    # response.headers['Set-Cookie'] = 'Secure;SameSite=None'
 
     if params[:search]
       @decks = Deck.global_search(params[:search][:name])
