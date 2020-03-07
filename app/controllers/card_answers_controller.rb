@@ -18,8 +18,9 @@ class CardAnswersController < ApplicationController
   private
 
   def destroy_answer
-    if !current_user.card_answers.blank?
-      current_user.card_answers.find_by(@card).destroy
+    @card = current_user.card_answers.find_by(card_id: params[:card_id])
+    if @card
+      @card.destroy
     end
   end
 end
