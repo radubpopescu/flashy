@@ -14,6 +14,12 @@ puts 'creating categories'
 tech = Category.create!(name: 'technology')
 bio = Category.create!(name: 'biology')
 physics = Category.create!(name: 'physics')
+category = Category.create!(name: 'category')
+category = Category.create!(name: 'category')
+category = Category.create!(name: 'category')
+category = Category.create!(name: 'category')
+category = Category.create!(name: 'category')
+category = Category.create!(name: 'category')
 
 puts 'creating all decks'
 decks = []
