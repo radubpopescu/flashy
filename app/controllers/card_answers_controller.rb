@@ -1,21 +1,19 @@
 class CardAnswersController < ApplicationController
-  before_action :set_card_answer, only: [:update]
-  def create
-    @card_answer = CardAnswer.new(card_answer_params)
-    @card_answer.save
+  before_action :destroy_answer, only: [:user_knows, :user_does_not_know]
+
+  def user_knows
+    @card_answer = CardAnswer.create(answer: 1, card_id: params[:card_id], user_id: current_user.id)
   end
 
-  def update
-    @card_answer.update(card_answer_params)
+  def user_does_not_know
+    @card_answer = CardAnswer.create(answer: -1, card_id: params[:card_id], user_id: current_user.id)
   end
 
   private
 
-  def set_card_answer
-    @card_answer = current_user.card_answers.find(params[:card_id])
-  end
-
-  def card_answer_params
-    params.require(:card_answer).permit(:answer, :card_id)
+  def destroy_answer
+    if !current_user.card_answers.blank?
+      current_user.card_answers.find_by(card_id: params[:card_id]).destroy
+    end
   end
 end

@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :favorite_categories
   has_many :categories, through: :favorite_categories
   has_many :card_answers
+  has_many :reviews, dependent: :destroy
 end

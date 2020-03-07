@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   root to: 'decks#index'
   resources :decks, except: :index do
     resources :cards do
-      resources :card_answers, only: [:crate, :update]
+      post 'knows', to: 'card_answers#user_knows', as: :user_knows
+      post 'does_not_know', to: 'card_answers#user_does_not_know', as: :user_does_not_know
     end
+    resources :reviews, only: [:create, :index]
   end
   resources :categories
   resources :favorite_categories, only: [:new, :create]
   devise_for :users
-
 end
