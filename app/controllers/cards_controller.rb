@@ -3,9 +3,15 @@ class CardsController < ApplicationController
   end
 
   def show
-    @deck = Deck.find(params["deck_id"])
-    @card = @deck.cards.find(params["id"])
-    @count_card = @deck.cards.last.id - @card.id + 1
-    @percentage = (@deck.cards.count - @count_card)/(@deck.cards.count)
+    # raise
+    begin
+      @deck = Deck.find(params["deck_id"])
+      @card = @deck.cards.find(params["id"])
+    rescue ActiveRecord::RecordNotFound
+        redirect_to root_path
+        return
+    end
+      @count_card = @deck.cards.last.id - @card.id + 1
+      @percentage = (@deck.cards.count - @count_card).to_f/(@deck.cards.count).to_f * 100.0
   end
 end

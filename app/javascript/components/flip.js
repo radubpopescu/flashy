@@ -1,10 +1,14 @@
-const flipButton = document.querySelector('#flip');
-const iKnowButton = document.querySelector('#iknow');
-const iDontKnowButton = document.querySelector('#idk');
+const answer = document.getElementById('answer');
+const flipButton = document.querySelector('.flip');
+const showElements = document.querySelectorAll('.show')
+arrayShow = Array.from(showElements)
 
 
 flipButton.addEventListener('click', () => {
+
+  arrayShow.forEach((element) => {
+    element.style.display = 'inline'
+  });
   flipButton.style.display = 'none';
-  iKnowButton.style.display = 'inline';
-  iDontKnowButton.style.display = 'inline';
+  answer.disabled = 'true';
 });
