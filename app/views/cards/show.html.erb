@@ -21,12 +21,14 @@
         </div>
       </div>
 
-      <div class="mt-4">
-        <%= link_to 'I knew it!', deck_card_path(@deck, @card.id + 1), style: 'display:none', class: 'btn btn-primary show'%>
-        <%= link_to 'I didn\'t know!', deck_card_path(@deck, @card.id + 1), style: 'display:none', class: 'btn btn-danger show'%>
-      </div>
+<!--       <div class="mt-4">
+        <%= #link_to 'I knew it!', deck_card_path(@deck, @card.id + 1), style: 'display:none', class: 'btn btn-primary show'%>
+        <%= #link_to 'I didn\'t know!', deck_card_path(@deck, @card.id + 1), style: 'display:none', class: 'btn btn-danger show'%>
+      </div> -->
 
 
+      <%= link_to 'I knew it!', deck_card_user_knows_path(@deck, @card), style: 'display:none', class: 'btn btn-primary', id: 'iknow', method: :post %>
+      <%= link_to 'I didn\'t know!', deck_card_user_does_not_know_path(@deck, @card), style: 'display:none', class: 'btn btn-danger', id: 'idk', method: :post %>
 
     </div>
   </div>
