@@ -1,2 +1,31 @@
-<h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 mt-4">
+      <h1><%= @deck.name %></h1>
+
+      <p>You have studied
+        <strong><%= @deck.cards.count - @count_card %></strong>
+      out of <%= @deck.cards.count %> cards in this deck</p>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: <%= @percentage %>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= @percentage.round %>%</div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-body" style="width: 500px; margin: 0 auto;">
+          <h5 class="card-title"><%= @card.front %></h5>
+          <textarea name="Text1" id='answer' cols="40" rows="5" style="width:450px;"></textarea>
+          <br>
+          <p class="card-text show mt-4" style="display:none"><strong>Answer:</strong> <%= @card.back %></p>
+          <br>
+          <button class="flip mt-3" type="submit">flip card</button>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <%= link_to 'I knew it!', deck_card_user_knows_path(@deck, @card), style: 'display:none', class: 'btn btn-primary show', method: :post %>
+        <%= link_to 'I didn\'t know!', deck_card_user_does_not_know_path(@deck, @card), style: 'display:none', class: 'btn btn-danger show', method: :post %>
+      </div>
+
+    </div>
+  </div>
+</div>

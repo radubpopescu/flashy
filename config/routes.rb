@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   # get 'decks/show', to: 'decks#show', as: :deck
   # get 'categories/index', to: 'categories#index', as: :categories
   root to: 'decks#index'
-
-  resources :decks, except: [:index] do
-    resources :cards
+  resources :decks, except: :index do
+    resources :cards do
+      post 'knows', to: 'card_answers#user_knows', as: :user_knows
+      post 'does_not_know', to: 'card_answers#user_does_not_know', as: :user_does_not_know
+    end
+    resources :reviews, only: [:create, :index]
   end
   resources :categories
   resources :favorite_categories, only: [:new, :create]
   devise_for :users
-
 end

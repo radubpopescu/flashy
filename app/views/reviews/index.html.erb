@@ -1,0 +1,18 @@
+<h1>All reviews for <%= @deck.name %>:</h1>
+
+<ul>
+  <% @reviews.each do |review| %>
+    <li>
+      <%= review.content %>
+      <% if review.review_value == 1 %>
+        <i class="far fa-thumbs-up"></i>
+      <% else %>
+        <i class="far fa-thumbs-down"></i>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+
+<h2>Leave a review:</h2>
+<%= render 'form', deck: @deck, review: @review %>

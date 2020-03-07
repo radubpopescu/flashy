@@ -1,23 +1,22 @@
 <div class="container content">
   <div class="row">
-    <div class="col-sm-12 mt-4">
+    <div class="col-12 mt-4">
+
       <h1>Look for the best flashy cards</h1>
 
       <%= render 'search' %>
 
-      <ul style="list-style-type:none">
-        <li>
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <% @decks.each do |deck| %>
-              <h2 class="card-title"><%= deck.name %></h2>
-              <p class="card-text"><%= deck.description %></p>
-              <%= link_to "Lets Play", deck_path(deck), class: "card-link" %>
-            <% end %>
+      <div class="d-flex justify-content-between">
+        <% @decks.each do |deck| %>
+          <div class="card mb-4" style="width: 18rem;">
+            <div class="card-body">
+                <h2 class="card-title"><%= deck.name %></h2>
+                <p class="card-text"><%= deck.description %></p>
+                <%= link_to "Lets Play", deck_path(deck), class: "card-link" %>
+            </div>
           </div>
-        </div>
-        </li>
-      </ul>
+        <% end %>
+      </div>
 
     </div>
   </div>

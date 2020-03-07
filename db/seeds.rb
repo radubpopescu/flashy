@@ -1,6 +1,7 @@
 require 'csv'
 
 puts 'destroying all seeds'
+FavoriteCategory.destroy_all
 Deck.destroy_all
 User.destroy_all
 
@@ -33,8 +34,8 @@ decks.each do |deck|
     CSV.foreach(file, csv_options) do |csv|
       print '.'
       card = Card.create!(
-        front: csv["question"],
-        back: csv["answer"],
+        front: csv["Question"],
+        back: csv["Answer"],
         deck: deck
         )
     end
