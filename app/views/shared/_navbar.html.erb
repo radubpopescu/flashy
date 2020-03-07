@@ -1,34 +1,10 @@
-<div id= "vertical-nav" class="navbar navbar-expand-sm navbar-light">
-  <button class="menu-bar" style="background-color: transparent; border: none;">
-      <%= image_tag "menu-bar.svg"%>
-  </button>
+<!-- <div id= "vertical-nav" class="navbar navbar-expand-sm navbar-light"> -->
+
+<div class="dropdown show">
+  <div id="menu-bar-open menu-bar" class="dropdownMenuLink">
+    <%= image_tag "menu-bar.svg", alt: "Menu image" %>
+  </div>
 </div>
 
 
- <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <ul class="nav nav-pills nav-stacked">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "About", "#", class: "nav-link about" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Home", "#", class: "nav-link home" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item login">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
-  </div> -->
-
-
+<!-- </div> -->

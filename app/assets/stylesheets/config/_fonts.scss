@@ -6,11 +6,25 @@ $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+@font-face {
+  font-family: "Avenir";
+  // src: font-url('/public/fonts/Avenir-Book.eot');
+  src: font-url('/Avenir-Book.ttf') format('truetype')
+       // font-url('/public/fonts/Avenir-Book.woff') format('woff'),
+       // font-url('/Avenir-Book.eot?#iefix') format('embedded-opentype'),
+}
+$h1-h2-font: "Avenir";
+
+@font-face {
+  font-family: "Avenir Light";
+  src: font-url('/Avenir-Light.ttf') format('truetype')
+
+}
+$a-p-font: "Avenir Light";
+
+@font-face {
+  font-family: "Avenir Light Oblique";
+  src: font-url('/Avenir-Light-Oblique.ttf') format('truetype')
+
+}
+$h3-font: "Avenir Light Oblique";
