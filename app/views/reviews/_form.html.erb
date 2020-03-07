@@ -1,0 +1,5 @@
+<%= simple_form_for [deck, review], url: deck_reviews_path, method: :post do |f| %>
+  <%= f.input :content %>
+  <%= f.input :review_value, collection: [[1, 'upvote'], [-1, 'downvote']], label_method: :second, value_method: :first, as: :radio_buttons, include_hidden: false %>
+  <%= f.submit "add review", class: "btn btn-primary" %>
+<% end %>
