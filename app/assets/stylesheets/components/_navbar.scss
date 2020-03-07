@@ -1,12 +1,27 @@
-.navbar-lewagon {
+.nav-row {
+  height: calc(100% - 70px); /* 100% Full-height */
+  z-index: 1; /* Stay on top */
+}
+
+.menu-bar {
+  margin-left: 32px;
+  align-self: flex-start;
+  margin-top: 32px;
+}
+
+#vertical-nav {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  width: 12rem;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  box-shadow: 4px 0px 23px rgba(143, 0, 255, 0.55);
+  opacity: 0.96;
+  transition: all 0.4s;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
+#vertical-nav img {
   width: 70px;
 }

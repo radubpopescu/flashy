@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # get 'decks/show', to: 'decks#show', as: :deck
   # get 'categories/index', to: 'categories#index', as: :categories
   root to: 'decks#index'
-  resources :decks, except: :index do
+
+  resources :decks, except: [:index] do
     resources :cards
   end
   resources :categories

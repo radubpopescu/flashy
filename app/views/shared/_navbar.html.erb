@@ -1,21 +1,19 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://icons-for-free.com/iconfiles/png/512/character+speedster+super+hero+the+flash+icon-1320166752997452047.png" %>
-    <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<div id= "vertical-nav" class="navbar navbar-expand-sm navbar-light">
+  <button class="menu-bar" style="background-color: transparent; border: none;">
+      <%= image_tag "menu-bar.svg"%>
   </button>
+</div>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <ul class="nav nav-pills nav-stacked">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "About", "#", class: "nav-link about" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to "Home", "#", class: "nav-link home" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -26,10 +24,11 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
+        <li class="nav-item login">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>
-  </div>
-</div>
+  </div> -->
+
+
