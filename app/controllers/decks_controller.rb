@@ -6,9 +6,9 @@ class DecksController < ApplicationController
     redirect_to categories_path if current_user.favorite_categories.empty?
 
     if params[:search]
-      @decks = Deck.global_search(params[:search][:name])
+      @decks = Deck.global_search(params[:search][:name]).sort_by(&:review_total).reverse
     else
-      @decks = Deck.all
+      @decks = Deck.all.sort_by(&:review_total).reverse
     end
   end
 
