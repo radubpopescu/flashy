@@ -6,13 +6,14 @@
 
       <%= render 'search' %>
 
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between flex-wrap">
         <% @decks.each do |deck| %>
           <div class="card mb-4" style="width: 18rem;">
             <div class="card-body">
                 <h2 class="card-title"><%= deck.name %></h2>
                 <p class="card-text"><%= deck.description %></p>
-                <p> <%= deck.review_total %> upvotes </p>
+                <p> <%= deck.upvotes %> upvotes </p>
+                <p> <%= deck.downvotes %> downvotes </p>
                 <%= link_to "Lets Play", deck_path(deck), class: "card-link" %>
             </div>
           </div>
