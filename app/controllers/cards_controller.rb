@@ -9,7 +9,7 @@ class CardsController < ApplicationController
       @deck = Deck.find(params["deck_id"])
       @card = @deck.cards.find(params["id"])
     rescue ActiveRecord::RecordNotFound
-        redirect_to root_path
+        redirect_to deck_results_path
         return
     end
       @count_card = @deck.cards.last.id - @card.id + 1
