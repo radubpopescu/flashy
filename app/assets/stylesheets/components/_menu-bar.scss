@@ -6,10 +6,12 @@
   z-index: 1; /* Stay on top */
   bottom: 0;
   left: 0;
-  background-color: #111; /* Black*/
+  background-color: transparent; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
+  padding-top: 70px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+
+  box-shadow: 4px 0px 23px rgba(143, 0, 255, 0.55);
 }
 
 /* The sidebar links */
@@ -17,15 +19,15 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: $black;
   display: block;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
   // color: rgb(43,43,43);
-  background-color: $yellow;
+  background-color: $purple;
 }
 
 
@@ -41,7 +43,7 @@
 
 #mySidebar {
   font-family: $a-p-font;
-  color: rgb(43,43,43);
+  // color: black;
   font-weight: bold;
 
 }
