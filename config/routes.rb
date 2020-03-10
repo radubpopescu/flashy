@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       post 'does_not_know', to: 'card_answers#user_does_not_know', as: :user_does_not_know
     end
     resources :reviews, only: [:create, :index]
+    get 'results', to: 'decks#results', as: :results
   end
   resources :categories
   resources :favorite_categories, only: [:new, :create]
