@@ -6,7 +6,7 @@
 
       <%= render 'search' %>
 
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between flex-wrap">
         <% @decks.each do |deck| %>
           <div class="card mb-4" style="width: 18rem;">
             <div class="card-body col-8">
@@ -19,7 +19,7 @@
                 </div>
                 <div class="downvote">
                   <span ><i class="fas fa-sort-down"></i></span>
-                  <p>12 <%# put ruby downvote %></p>
+                  <p> <%= deck.downvotes %></p>
                 </div>
               </div>
             </div>

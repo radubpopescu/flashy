@@ -17,6 +17,22 @@ class Deck < ApplicationRecord
     tsearch: {prefix: true}
   }
 
+  def upvotes
+    total = 0
+    self.reviews.each do |review|
+      total += 1 if review[:review_value].to_i == 1
+    end
+    total
+  end
+
+  def downvotes
+    total = 0
+    self.reviews.each do |review|
+      total += 1 if review[:review_value].to_i == -1
+    end
+    total
+  end
+
   def review_total
     total = 0
     self.reviews.each do |review|
