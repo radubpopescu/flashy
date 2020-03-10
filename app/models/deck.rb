@@ -16,4 +16,12 @@ class Deck < ApplicationRecord
   using: {
     tsearch: {prefix: true}
   }
+
+  def review_total
+    total = 0
+    self.reviews.each do |review|
+      total += review[:review_value].to_i
+    end
+    total >= 0 ? total : 0
+  end
 end
