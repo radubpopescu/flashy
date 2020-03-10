@@ -1,14 +1,24 @@
-<h1>Results for <%= @deck.name %>:</h1>
+<div class="container content">
+  <div class="row">
+    <div class="col-12 mt-4">
+      <h1>Results for <%= @deck.name %>:</h1>
 
-<ul>
-  <li>
-    Knew: <%= @results_positive %>
-  </li>
-  <li>
-    Did not know: <%= @results_negative %>
-  </li>
-</ul>
-<strong>
-  Total: <%= @results_positive + @results_negative %>
-</strong>
-<p>Wooooooowwwww maaan, really impressive 😲</p>
+      <ul>
+        <li>
+          Knew: <%= @results_positive %>
+        </li>
+        <li>
+          Did not know: <%= @results_negative %>
+        </li>
+      </ul>
+      <strong>
+        Total: <%= @results_positive + @results_negative %>
+      </strong>
+      <% if @results_positive > @results_negative %>
+        <p>Wooooooowwwww maaan, really impressive 😲</p>
+      <% else %>
+        <p>Wow! I've never seen something like that...</p>
+      <% end %>
+    </div>
+  </div>
+</div>
