@@ -16,7 +16,7 @@
       <h2>Reviews (<%= @reviews.count %>)</h2>
       <% @reviews.each do |review| %>
         <% if review.review_value == 1 %>
-          <p> <i class="far fa-thumbs-up"></i></p>
+          <p><%= review.content %> <i class="far fa-thumbs-up"></i></p>
         <% else %>
           <p><%= review.content %> <i class="far fa-thumbs-down"></i></p>
         <% end %>

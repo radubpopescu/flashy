@@ -22,6 +22,6 @@ class Deck < ApplicationRecord
     self.reviews.each do |review|
       total += review[:review_value].to_i
     end
-    total >= 0 ? total : 0
+    total
   end
 end

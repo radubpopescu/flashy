@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
 
   def index
     @review = Review.new
-    @reviews = Review.all
+    @reviews = @deck.reviews
   end
 
   def create

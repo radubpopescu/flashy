@@ -1,18 +1,24 @@
-<h1>All reviews for <%= @deck.name %>:</h1>
+<div class="container content">
+  <div class="row">
+    <div class="col-12 mt-4">
+      <h1>All reviews for <%= @deck.name %>:</h1>
 
-<ul>
-  <% @reviews.each do |review| %>
-    <li>
-      <%= review.content %>
-      <% if review.review_value == 1 %>
-        <i class="far fa-thumbs-up"></i>
-      <% else %>
-        <i class="far fa-thumbs-down"></i>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+      <ul>
+        <% @reviews.each do |review| %>
+          <li>
+            <%= review.content %>
+            <% if review.review_value == 1 %>
+              <i class="far fa-thumbs-up"></i>
+            <% else %>
+              <i class="far fa-thumbs-down"></i>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
 
 
-<h2>Leave a review:</h2>
-<%= render 'form', deck: @deck, review: @review %>
+      <h2>Leave a review:</h2>
+      <%= render 'form', deck: @deck, review: @review %>
+    </div>
+  </div>
+</div>
