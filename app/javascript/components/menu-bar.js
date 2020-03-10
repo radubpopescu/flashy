@@ -1,4 +1,4 @@
-// /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 document.getElementById('menu-bar-open').addEventListener('click', () => {
   openNav();
 })

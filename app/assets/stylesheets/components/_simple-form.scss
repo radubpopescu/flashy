@@ -25,7 +25,6 @@
 .form-group {
   justify-content: center;
   flex-wrap: wrap;
-  overflow: hidden;
   max-height: 260px;
   justify-content: center;
   margin-bottom: 80px;
@@ -63,7 +62,6 @@
   .form-check-input {
     position: relative;
     margin: 0px;
-    background-image: url("./add-category.svg");
   }
 
   .form-check-label {
