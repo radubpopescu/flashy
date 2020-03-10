@@ -3,6 +3,7 @@ class Deck < ApplicationRecord
   belongs_to :category
   has_many :cards, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :card_answers, through: :cards
   validates :name, presence: true
 
   include PgSearch::Model
