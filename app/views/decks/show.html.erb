@@ -1,22 +1,26 @@
 <div class="container content">
   <div class="row">
-    <div class="col-sm-12 mt-4">
+    <div class="col-12 mt-4">
 
 
-      <div class="card mt-4">
-        <div class="card-body">
-          <h1><%= @deck.name %></h1>
-          <p>Category: <strong><%= @deck.category.name.capitalize %></strong></p>
-          <p>Number of cards in the deck: <%= @deck.cards.count %></p>
-          <p><%= @deck.description %></p>
+      <h1><%= @deck.name %></h1>
+      <p>Category: <strong><%= @deck.category.name.capitalize %></strong></p>
+      <p>Number of cards in the deck: <%= @deck.cards.count %></p>
+      <p><%= @deck.description %></p>
 
-          </br>
-          <%= link_to 'Play', deck_card_path(@deck, @deck.cards.first.id), class: 'btn btn-primary' %>
+      </br>
+      <%= link_to 'Play', deck_card_path(@deck, @deck.cards.first.id), class: 'btn btn-primary btn-lg' %>
 
-          <p class="mt-4">Flashcards made by <%= @deck.user.email %></p>
-        </div>
-      </div>
+      <p class="mt-4">Flashcards made by <%= @deck.user.email %></p>
 
+      <h2>Reviews (<%= @reviews.count %>)</h2>
+      <% @reviews.each do |review| %>
+        <% if review.review_value == 1 %>
+          <p> <i class="far fa-thumbs-up"></i></p>
+        <% else %>
+          <p><%= review.content %> <i class="far fa-thumbs-down"></i></p>
+        <% end %>
+      <% end -%>
     </div>
   </div>
 </div>

@@ -13,6 +13,7 @@ class DecksController < ApplicationController
   end
 
   def show
+    @reviews = @deck.reviews
   end
 
   def results
