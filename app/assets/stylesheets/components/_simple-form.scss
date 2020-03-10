@@ -64,13 +64,14 @@
     color: $purple;
 
     &:hover {
-      background-color: $purple;
+      background-color: $light-purple;
       cursor: pointer;
     }
     .form-check-label {
       color: black;
       font-family: $a-p-font;
       font-weight: bold;
+      z-index: -1;
       &:hover {
         cursor: pointer;
       }
@@ -80,6 +81,7 @@
   .form-check-input {
     display: none;
     margin: 0px;
+    z-index: 1;
   }
 }
 
@@ -87,6 +89,9 @@
   margin-bottom: 80px;
 }
 
+.purple {
+  background-color: rgba(143, 0, 255, 0.5) !important;
+}
 
 
 
