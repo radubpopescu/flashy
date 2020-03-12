@@ -13,12 +13,12 @@
 
       <p class="mt-4">Flashcards made by <%= @deck.user.email %></p>
 
-      <h2>Reviews (<%= @reviews.count %>)</h2>
+      <h2>Reviews (<%= @reviews.where.not(content: nil).count %>)</h2>
       <% @reviews.each do |review| %>
         <% if review.review_value == 1 %>
-          <p><%= review.content %> <i class="far fa-thumbs-up"></i></p>
+          <p><%= review.content %></p>
         <% else %>
-          <p><%= review.content %> <i class="far fa-thumbs-down"></i></p>
+          <p><%= review.content %></p>
         <% end %>
       <% end -%>
     </div>
