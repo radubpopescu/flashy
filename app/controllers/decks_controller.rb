@@ -2,7 +2,6 @@ class DecksController < ApplicationController
   before_action :set_deck, only: [:show]
 
   def index
-    # raise
     redirect_to categories_path if current_user.favorite_categories.empty?
 
     if params[:search]

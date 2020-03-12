@@ -8,7 +8,7 @@ User.destroy_all
 
 puts 'creating users'
 user = User.create!(email: 'admin@flashy.com', password: '123456')
-1000.times do
+50.times do
   User.create!(email: Faker::Internet.email, username: Faker::Name.first_name, password: "123456")
 end
 
@@ -75,7 +75,7 @@ puts 'creating review values'
 Deck.all.each do |deck|
   User.all.each do |user|
     random = rand(1..10) >= 3? 1 : -1
-    Review.create(content: Faker::Hipster.sentence(word_count: rand(7..15)), review_value: random, deck_id: deck.id, user_id: user.id)
+    Review.create(review_value: random, deck_id: deck.id, user_id: user.id)
   end
 end
 
