@@ -19,6 +19,7 @@
       <% else %>
         <p>Wow! I've never seen something like that...</p>
       <% end %>
+      <%= link_to "Re-try wrong ones", deck_wrong_answers_path(@deck, @deck.wrong_answers.first.card_id), class: 'btn btn-primary btn-lg'  %>
     </div>
   </div>
 </div>

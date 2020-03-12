@@ -40,4 +40,8 @@ class Deck < ApplicationRecord
     end
     total
   end
+
+  def wrong_answers
+    self.card_answers.where(answer: "-1")
+  end
 end
