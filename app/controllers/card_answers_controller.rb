@@ -1,11 +1,17 @@
 class CardAnswersController < ApplicationController
   before_action :destroy_answer, :set_deck
-  before_action :set_card
+  before_action :set_card, only: [:user_knows, :user_does_not_know]
 
   def start_playing
-    session[:current_card] = 1
-    session[:cards_count] = @deck.cards.count
-    redirect_to deck_card_path(deck_id: @deck, id: @card.nil? ? @deck.cards.first : @card.next_card(params[:wrong]).id, wrong: params[:wrong])
+    if params[:wrong] == "true"
+      session[:current_card] = 0
+      session[:cards_count] = @deck.wrong_answers.count
+      redirect_to deck_card_path(deck_id: @deck, id: @card.nil? ? @deck.cards.first : @card.next_card(params[:wrong]).id, wrong: params[:wrong])
+    else
+      session[:current_card] = 0
+      session[:cards_count] = @deck.cards.count
+      redirect_to deck_card_path(deck_id: @deck, id: @card.nil? ? @deck.cards.first : @card.next_card(params[:wrong]).id, wrong: params[:wrong])
+    end
   end
 
   def user_knows

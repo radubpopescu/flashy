@@ -20,7 +20,7 @@
         <p>Wow! I've never seen something like that...</p>
       <% end %>
       <% if @deck.wrong_answers.any? %>
-        <%= link_to "Re-try wrong ones", deck_card_path(deck: @deck, id: @deck.wrong_answers.first.card_id, wrong: true), class: 'btn btn-primary btn-lg'  %>
+        <%= link_to "Re-try wrong ones", deck_start_playing_path(@deck, wrong: true), class: 'btn btn-primary btn-lg'  %>
       <% end %>
     </div>
   </div>
