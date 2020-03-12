@@ -1,18 +1,31 @@
 class CardAnswersController < ApplicationController
-  before_action :destroy_answer, only: [:user_knows, :user_does_not_know]
+  before_action :destroy_answer, :set_deck
+  before_action :set_card
+
+  def start_playing
+    session[:current_card] = 1
+    session[:cards_count] = @deck.cards.count
+    redirect_to deck_card_path(deck_id: @deck, id: @card.nil? ? @deck.cards.first : @card.next_card(params[:wrong]).id, wrong: params[:wrong])
+  end
 
   def user_knows
+    session[:current_card] += 1
     @card_answer = CardAnswer.create(answer: 1, card_id: params[:card_id], user_id: current_user.id)
-    @deck = Deck.find(params[:deck_id])
-    @card = Card.find(params[:card_id])
-    redirect_to deck_card_path(@deck, @card.id + 1)
+    if @card.next_card(params[:wrong])
+      redirect_to deck_card_path(@deck, @card.next_card(params[:wrong]).id, wrong: params[:wrong])
+    else
+      redirect_to deck_results_path
+    end
   end
 
   def user_does_not_know
+    session[:current_card] += 1
     @card_answer = CardAnswer.create(answer: -1, card_id: params[:card_id], user_id: current_user.id)
-    @deck = Deck.find(params[:deck_id])
-    @card = Card.find(params[:card_id])
-    redirect_to deck_card_path(@deck, @card.id + 1)
+    if @card.next_card(params[:wrong])
+      redirect_to deck_card_path(@deck, @card.next_card(params[:wrong]).id, wrong: params[:wrong])
+    else
+      redirect_to deck_results_path
+    end
   end
 
   private
@@ -22,5 +35,13 @@ class CardAnswersController < ApplicationController
     if @card
       @card.destroy
     end
+  end
+
+  def set_deck
+    @deck = Deck.find(params[:deck_id])
+  end
+
+  def set_card
+    @card = Card.find(params[:card_id])
   end
 end
