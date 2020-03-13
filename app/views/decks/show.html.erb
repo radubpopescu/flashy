@@ -9,7 +9,8 @@
       <p><%= @deck.description %></p>
 
       </br>
-      <%= link_to 'Play', deck_card_path(@deck, @deck.cards.first.id), class: 'btn btn-primary btn-lg' %>
+        <%= link_to 'Play', deck_start_playing_path(@deck), class: 'btn btn-primary btn-lg' %>
+
 
       <p class="mt-4">Flashcards made by <%= @deck.user.email %></p>
 

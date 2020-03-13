@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
     resources :reviews, only: [:create, :index]
     get 'results', to: 'decks#results', as: :results
+    get 'start_playing', to: 'card_answers#start_playing', as: :start_playing
   end
   resources :categories
   resources :favorite_categories, only: [:new, :create]
