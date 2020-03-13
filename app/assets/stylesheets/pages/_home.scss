@@ -1,7 +1,8 @@
 // Specific CSS for your home-page
 
 body {
-  background-color: $background-color;
+  background: url('bg.svg') no-repeat;
+  background-size: cover;
   h1 h2 h3 a p {
     color: #E1E0E2;
   }
