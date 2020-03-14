@@ -3,7 +3,7 @@ import '../components/menu-bar'
 import '../components/category-button'
 import '../components/flip'
 import '../components/menu-bar'
-
+require("chartkick").use(require("highcharts"))
 
 
 
