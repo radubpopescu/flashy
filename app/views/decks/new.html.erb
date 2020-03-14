@@ -1,0 +1,5 @@
+<%= simple_form_for @deck, url: decks_path, method: :post do |f| %>
+   <%= f.input :name %>
+   <%= f.association :category %>
+   <%= f.button :submit, value: "Create", class: "btn btn-primary"%>
+<%end%>
