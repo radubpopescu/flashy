@@ -44,4 +44,6 @@ class Deck < ApplicationRecord
   def wrong_answers
     self.card_answers.where(answer: "-1").order(:card_id)
   end
+
+
 end
