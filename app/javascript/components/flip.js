@@ -1,8 +1,9 @@
 function flipCard() {
   const answer = document.getElementById('answer');
   const flipButton = document.querySelector('.flip');
-  const showElements = document.querySelectorAll('.show')
-  arrayShow = Array.from(showElements)
+  const showElements = document.querySelectorAll('.show');
+
+  const arrayShow = Array.from(showElements);
 
 
   flipButton.addEventListener('click', () => {
