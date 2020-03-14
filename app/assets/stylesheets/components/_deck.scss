@@ -1,0 +1,9 @@
+#deck{
+  background-color: #35495E;
+  color: white;
+  border-radius: 15px;
+  font-weight: bolder;
+  &:hover{
+    box-shadow: 0 20px 40px rgba(44,81,120,.25)
+  }
+}

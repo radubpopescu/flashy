@@ -29,4 +29,7 @@ class DecksController < ApplicationController
   def set_deck
     @deck = Deck.find(params[:id])
   end
+
+  def category_deck
+  end
 end
