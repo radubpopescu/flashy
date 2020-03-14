@@ -7,7 +7,7 @@ class DecksController < ApplicationController
     if params[:search]
       @decks = Deck.global_search(params[:search][:name]).sort_by(&:review_total).reverse
     else
-      @decks = Deck.all.sort_by(&:review_total).reverse
+      @decks = category_deck.sort_by(&:review_total).reverse
     end
   end
 
@@ -45,4 +45,15 @@ class DecksController < ApplicationController
   def deck_params
     params.require(:deck).permit(:name, :category_id)
   end
+
+  def category_deck
+    decks = []
+    current_user.favorite_categories.each do |m|
+       decks << Deck.all.select do |n|
+        n.category == m.category
+      end
+    end
+    decks.flatten
+  end
+
 end
