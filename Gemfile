@@ -12,6 +12,7 @@ gem 'redis'
 gem 'faker'
 gem "chartkick"
 gem 'minimist'
+gem "cocoon"
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
