@@ -10,7 +10,7 @@
     <%= favicon_link_tag 'tab_icon.svg' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  <body>
+  <body class="<%= controller_name %> <%= action_name %>">
     <div class="main-container">
       <%= render 'shared/menu-bar' %>
       <%= render 'shared/navbar' %>

@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 mt-4">
+    <div class="col-sm-12 mt-5 deck-index">
 
       <h1>Look for the best flashy cards</h1>
 
       <%= render 'search' %>
 
-      <div class="d-flex justify-content-between flex-wrap">
+      <div class="d-flex justify-content-around flex-wrap">
         <% @decks.each do |deck| %>
-          <div class="card mb-4" style="width: 18rem;">
-            <div class="card-body col-8">
+          <div class="card mb-4 deck-card" style="width: 18rem;">
+            <div class="card-body col-8 deck-body">
               <h2 class="card-title"><%= deck.name %></h2>
-              <%= link_to "Lets Play", deck_path(deck), class: "card-link" %>
+              <%= link_to "Lets Play", deck_path(deck), class: "card-link deck-link" %>
               <div class="reviews d-flex justify-content-sm-around" style="position: relative; right: 30px; top: 20px;">
                 <div class="upvote">
                   <span ><i class="fas fa-sort-up"></i></span>
