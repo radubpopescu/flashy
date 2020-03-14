@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.create(content: review_params[:content], review_value: review_params[:review_value].to_i, deck_id: @deck.id, user_id: current_user.id)
-    redirect_to deck_reviews_path(@deck)
+    redirect_to deck_path(@deck)
   end
 
   private

@@ -10,9 +10,12 @@
 
       </br>
         <%= link_to 'Play', deck_start_playing_path(@deck), class: 'btn btn-primary btn-lg' %>
-
+        <%= link_to 'Add card', new_deck_card_path(@deck), class: 'btn btn-secondary btn-lg' %>
 
       <p class="mt-4">Flashcards made by <%= @deck.user.email %></p>
+
+      <p>Leave a review:</p>
+      <%= render 'reviews/form', deck: @deck, review: @review %>
 
       <h2>Reviews (<%= @reviews.where.not(content: nil).count %>)</h2>
       <% @reviews.each do |review| %>

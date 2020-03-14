@@ -11,7 +11,19 @@ class DecksController < ApplicationController
     end
   end
 
+  def new
+    @deck = Deck.new()
+  end
+
+  def create
+    @deck = Deck.new(deck_params)
+    @deck.user = current_user
+    @deck.save
+    redirect_to deck_path(@deck)
+  end
+
   def show
+    @review = Review.new
     @reviews = @deck.reviews
   end
 
@@ -28,6 +40,10 @@ class DecksController < ApplicationController
 
   def set_deck
     @deck = Deck.find(params[:id])
+  end
+
+  def deck_params
+    params.require(:deck).permit(:name, :category_id)
   end
 
   def category_deck
