@@ -53,6 +53,7 @@ decks << deck_22 = Deck.create!(name: 'Physics for dummies', user: user, categor
 decks << deck_23 = Deck.create!(name: 'Physics for dummies', user: user, category: physics)
 decks << deck_24 = Deck.create!(name: 'Physics for dummies', user: user, category: physics)
 decks << deck_25 = Deck.create!(name: 'Physics for dummies', user: user, category: physics)
+decks << deck_26 = Deck.create!(name: 'Category test', user: user, category: category)
 
 puts 'creating all cards'
 decks.each do |deck|
@@ -67,7 +68,7 @@ decks.each do |deck|
         )
     end
 end
-
+puts "/"
 puts 'destroying reviews'
 Review.destroy_all
 
@@ -78,5 +79,10 @@ Deck.all.each do |deck|
     Review.create(review_value: random, deck_id: deck.id, user_id: user.id)
   end
 end
+
+puts "creating user Bernardo Goes"
+user_01 = User.create!(email: "bernardo@gmail.com", password: "123456")
+FavoriteCategory.create!(user: user_01, category: bio)
+puts "created Bernardo Goes"
 
 puts 'done'

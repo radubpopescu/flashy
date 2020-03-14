@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-12 mt-4">
       <h1>Results for <%= @deck.name %>:</h1>
-
+      <% data = [["Correct", @results_positive],
+                ["Wrong", @results_negative]] %>
+      <%= pie_chart data, library: { pieSliceText: 'value' } %>
       <ul>
         <li>
           Knew: <%= @results_positive %>
@@ -22,6 +24,7 @@
       <% if @deck.wrong_answers.any? %>
         <%= link_to "Re-try wrong ones", deck_start_playing_path(@deck, wrong: true), class: 'btn btn-primary btn-lg'  %>
       <% end %>
+        <%= link_to "Play again", deck_start_playing_path(@deck, wrong: false), class: 'btn btn-secondary btn-lg' %>
     </div>
   </div>
 </div>
