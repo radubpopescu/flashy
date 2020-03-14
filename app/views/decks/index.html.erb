@@ -1,12 +1,8 @@
-<div class="banner">
-  <h1>Look for the best flashy cards in town</h1>
-  <%= render 'search' %>
-</div>
-
-
-<div class="container" style="background-color: #FFF; border-radius: 10px; padding: 10px 40px; width: 1300px;">
+<div class="container">
   <div class="row">
     <div class="col-12 mt-4">
+      <h1>Look for the best flashy cards in town</h1>
+      <%= render 'search' %>
 
       <div class="d-flex justify-content-between flex-wrap">
         <% @decks.each do |deck| %>

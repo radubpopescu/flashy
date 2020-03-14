@@ -11,10 +11,12 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <div class="main-container">
       <%= render 'shared/menu-bar' %>
       <%= render 'shared/navbar' %>
       <%= yield %>
       <%= render 'shared/flashes' %>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
