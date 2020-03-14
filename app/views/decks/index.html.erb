@@ -12,6 +12,7 @@
           <div class="card mb-4 deck-card" style="width: 18rem;">
             <div class="card-body col-8 deck-body">
               <h2 class="card-title"><%= deck.name %></h2>
+              <p class="card-title"><%= deck.category.name %></p>
               <%= link_to "Lets Play", deck_path(deck), class: "card-link deck-link" %>
               <div class="reviews d-flex justify-content-sm-around" style="position: relative; right: 30px; top: 20px;">
                 <div class="upvote">
