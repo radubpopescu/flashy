@@ -13,9 +13,3 @@ if (indexCategories) {
   markCategories();
   favoriteCategories();
 }
-
-
-
-
-
-

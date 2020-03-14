@@ -19,6 +19,16 @@
           <br>
           <button class="flip mt-3" type="submit">flip card</button>
         </div>
+        <div class="user-actions">
+          <% if @deck.user == current_user %>
+        <%= link_to edit_deck_card_path(@deck, @card) do %>
+          <i class="fas fa-edit fa"></i>
+        <% end %>
+        <%= link_to deck_card_path(@deck, @card), method: :delete, data: {confirm: 'Are you sure'} do %>
+          <i class="fas fa-trash fa"></i>
+        <% end %>
+      <% end %>
+        </div>
       </div>
 
       <div class="mt-4">

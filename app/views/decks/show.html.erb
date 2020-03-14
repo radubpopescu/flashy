@@ -4,6 +4,14 @@
 
 
       <h1><%= @deck.name %></h1>
+      <% if @deck.user == current_user %>
+        <%= link_to edit_deck_path(@deck) do %>
+          <i class="fas fa-edit fa"></i>
+        <% end %>
+        <%= link_to deck_path(@deck), method: :delete, data: {confirm: 'Are you sure'} do %>
+          <i class="fas fa-trash fa"></i>
+        <% end %>
+      <% end %>
       <p>Category: <strong><%= @deck.category.name.capitalize %></strong></p>
       <p>Number of cards in the deck: <%= @deck.cards.count %></p>
       <p><%= @deck.description %></p>

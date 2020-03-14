@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-  before_action :set_deck, only: [:show]
+  before_action :set_deck, only: [:show, :edit, :update, :destroy]
 
   def index
     redirect_to categories_path if current_user.favorite_categories.empty?
@@ -13,6 +13,22 @@ class DecksController < ApplicationController
 
   def new
     @deck = Deck.new()
+  end
+
+  def edit
+  end
+
+  def update
+    if @deck.update(deck_params)
+      redirect_to deck_path(@deck), notice: 'Deck was updated'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @deck.destroy
+    redirect_to root_path, notice: 'Deck was deleted'
   end
 
   def create
