@@ -9,30 +9,23 @@
 
       <div class="d-flex justify-content-around flex-wrap">
         <% @decks.each do |deck| %>
-
-          <div class="card mb-4 deck-card">
-            <%= link_to deck_path(deck), class: "deck-link bd-highlight" do %>
-              <div class="card-body deck-body">
-
-                <div class="deck-title bd-highlight">
-                  <h3 class="card-title"><%= deck.name %></h3>
-                </div>
-
-                <div class="reviews d-flex justify-content-center" style="position: relative; right: 30px; top: 20px; margin-left: 60px;">
-                  <div class="upvote deck-upvote">
+          <div class="card mb-4 deck-card" style="width: 18rem;">
+            <%= link_to deck_path(deck), class: "card-link deck-link" do %>
+              <div class="card-body col-8 deck-body">
+                <h3 class="card-title"><%= deck.name %></h3>
+                <p class="card-title"><%= deck.category.name %></p>
+                <div class="reviews d-flex justify-content-sm-around" style="position: relative; right: 30px; top: 20px;">
+                  <div class="upvote">
                     <span ><i class="fas fa-sort-up"></i></span>
                     <p><%= deck.review_total %></p>
                   </div>
-
-                  <div class="downvote deck-upvote">
+                  <div class="downvote">
                     <span ><i class="fas fa-sort-down"></i></span>
                     <p> <%= deck.downvotes %></p>
                   </div>
                 </div>
-
-
               </div>
-            <% end %>
+            <% end -%>
           </div>
         <% end %>
       </div>
