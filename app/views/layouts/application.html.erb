@@ -14,10 +14,10 @@
     <div class="main-container">
       <%= render 'shared/menu-bar' %>
       <%= render 'shared/navbar' %>
-      <%= javascript_include_tag 'application' %>
-      <%= javascript_pack_tag 'application' %>
       <%= yield %>
       <%= render 'shared/flashes' %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
     </div>
   </body>
 </html>
