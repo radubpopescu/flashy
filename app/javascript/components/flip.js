@@ -1,14 +1,19 @@
-const answer = document.getElementById('answer');
-const flipButton = document.querySelector('.flip');
-const showElements = document.querySelectorAll('.show')
-arrayShow = Array.from(showElements)
+function flipCard() {
+  const answer = document.getElementById('answer');
+  const flipButton = document.querySelector('.flip');
+  const showElements = document.querySelectorAll('.show')
+  arrayShow = Array.from(showElements)
 
 
-flipButton.addEventListener('click', () => {
+  flipButton.addEventListener('click', () => {
 
-  arrayShow.forEach((element) => {
-    element.style.display = 'inline'
+    arrayShow.forEach((element) => {
+      element.style.display = 'inline'
+    });
+    flipButton.style.display = 'none';
+    answer.disabled = 'true';
   });
-  flipButton.style.display = 'none';
-  answer.disabled = 'true';
-});
+
+}
+
+export { flipCard } ;
