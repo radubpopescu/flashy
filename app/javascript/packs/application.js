@@ -1,3 +1,4 @@
+require("chartkick").use(require("highcharts"))
 import "bootstrap";
 import '../components/menu-bar'
 import { markCategories } from '../components/category-button'
@@ -14,7 +15,6 @@ if (indexCategories) {
 }
 
 
-require("chartkick").use(require("highcharts"))
 
 
 
