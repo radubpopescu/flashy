@@ -27,7 +27,12 @@
       <% if @deck.wrong_answers.any? %>
         <%= link_to "Re-try wrong ones", deck_start_playing_path(@deck, wrong: true), class: 'btn btn-primary btn-lg'  %>
       <% end %>
-        <%= link_to "Play again", deck_start_playing_path(@deck, wrong: false), class: 'btn btn-secondary btn-lg' %>
+      <%= link_to "Play again", deck_start_playing_path(@deck, wrong: false), class: 'btn btn-secondary btn-lg' %>
+      <%= link_to "Back to show", deck_path(@deck), class: 'btn btn-secondary btn-lg' %>
+      <div class="review mt-4">
+        <h2>Leave a review:</h2>
+        <%= render 'reviews/form', deck: @deck, review: @review %>
+      </div>
     </div>
   </div>
 </div>
