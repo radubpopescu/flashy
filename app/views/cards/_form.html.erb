@@ -1,0 +1,5 @@
+<%= simple_form_for [deck, card] do |f| %>
+      <%= f.input :front %>
+      <%= f.input :back %>
+      <%= f.submit "add card", class: "btn btn-primary" %>
+    <% end %>
