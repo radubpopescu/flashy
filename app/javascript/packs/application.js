@@ -17,7 +17,3 @@ const flipCards = document.querySelector(".cards");
 if (flipCards) {
   flipCard();
 }
-
-
-
-

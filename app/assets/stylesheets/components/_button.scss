@@ -10,3 +10,39 @@
   background: #1BCB7F;
   color: white;
 }
+
+.flip{
+  background-color: #8F00FF;
+  border-radius: 39px;
+  box-shadow: 0px 4px 8px rgba(143, 0, 255, 0.49);
+  color: white;
+  width: 244px;
+  height: 51px;
+  position: absolute;
+  top:250px;
+  left:200px;
+  border: 0;
+  transition: .3s;
+  text-align: center;
+  line-height: 50px;
+  &:hover{
+    background-color: #7502CE;
+  }
+}
+
+.user-actions{
+  position: absolute;
+  top: 630px;
+  left: 1261px;
+}
+
+
+  //  <div class="row justify-content-center mt-5">
+  //   <div class="card show" style="width: 720px; border-radius: 17px;display:none; height: 151px; box-shadow: 0px 6px 12px rgba(109,109,109,.29);">
+  //     <div class="card-body" style="margin: 0 auto;">
+  //       <p class="card-text show mt-4" style="display:none"><strong>Answer:</strong></p>
+  //       <br>
+  //       <p class="card-text show mt-4" style="display:none"><%=# @card.back %></p>
+  //     </div>
+  //   </div>
+  // </div>
