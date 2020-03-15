@@ -2,12 +2,20 @@
   <div class="d-flex flex-row">
     <div class="d-flex align-items-strech ml-4">
       <li class="nav-item active d-flex align-items-stretch mt-2 p-1">
-        <div class="dropdown show">
-          <div id="menu-bar-open" class="dropdownMenuLink">
-            <%= image_tag "menu-img.svg", alt: "Menu image" %>
+          <div class="dropdown show">
+            <div id="menu-bar-open" class="dropdownMenuLink">
+              <%= image_tag "menu-img.svg", alt: "Menu image" %>
+            </div>
           </div>
-        </div>
       </li>
     </div>
   </div>
+  <div class="d-flex flex-row-reverse">
+    <div class="d-flex align-items-strech mr-4">
+      <%= link_to "/" do %>
+        <%= image_tag "https://icons-for-free.com/iconfiles/png/512/character+speedster+super+hero+the+flash+icon-1320166752997452047.png", style: "height: 60px; width: 60px;" %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
