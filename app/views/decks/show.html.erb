@@ -8,7 +8,7 @@
         <%= link_to edit_deck_path(@deck) do %>
           <i class="fas fa-edit fa"></i>
         <% end %>
-        <%= link_to deck_path(@deck), method: :delete, data: {confirm: 'Are you sure'} do %>
+        <%= link_to deck_path(@deck), method: :delete, data: {confirm: 'Delete the deck?'} do %>
           <i class="fas fa-trash fa"></i>
         <% end %>
       <% end %>
