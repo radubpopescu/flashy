@@ -39,11 +39,11 @@ class DecksController < ApplicationController
   end
 
   def show
-    @review = Review.new
     @reviews = @deck.reviews
   end
 
   def results
+    @review = Review.new
     @deck = Deck.find(params[:deck_id])
     @results_positive = 0
     @results_negative = 0

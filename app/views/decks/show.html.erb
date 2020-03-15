@@ -18,12 +18,13 @@
 
       </br>
         <%= link_to 'Play', deck_start_playing_path(@deck), class: 'btn btn-primary btn-lg' %>
-        <%= link_to 'Add card', new_deck_card_path(@deck), class: 'btn btn-secondary btn-lg' %>
-
+        <% if @deck.user == current_user %>
+          <%= link_to 'Add card', new_deck_card_path(@deck), class: 'btn btn-secondary btn-lg' %>
+        <% end %>
+        <% if @deck.card_answers.where(user: current_user).any? %>
+          <%= link_to 'See results', deck_results_path(@deck), class: 'btn btn-secondary btn-lg' %>
+        <% end %>
       <p class="mt-4">Flashcards made by <%= @deck.user.email %></p>
-
-      <p>Leave a review:</p>
-      <%= render 'reviews/form', deck: @deck, review: @review %>
 
       <h2>Reviews (<%= @reviews.where.not(content: nil).count %>)</h2>
       <% @reviews.each do |review| %>
