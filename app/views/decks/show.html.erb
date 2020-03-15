@@ -4,18 +4,27 @@
 
 
       <h1><%= @deck.name %></h1>
+      <% if @deck.user == current_user %>
+        <%= link_to edit_deck_path(@deck) do %>
+          <i class="fas fa-edit fa"></i>
+        <% end %>
+        <%= link_to deck_path(@deck), method: :delete, data: {confirm: 'Delete the deck?'} do %>
+          <i class="fas fa-trash fa"></i>
+        <% end %>
+      <% end %>
       <p>Category: <strong><%= @deck.category.name.capitalize %></strong></p>
       <p>Number of cards in the deck: <%= @deck.cards.count %></p>
       <p><%= @deck.description %></p>
 
       </br>
         <%= link_to 'Play', deck_start_playing_path(@deck), class: 'btn btn-primary btn-lg' %>
-        <%= link_to 'Add card', new_deck_card_path(@deck), class: 'btn btn-secondary btn-lg' %>
-
+        <% if @deck.user == current_user %>
+          <%= link_to 'Add card', new_deck_card_path(@deck), class: 'btn btn-secondary btn-lg' %>
+        <% end %>
+        <% if @deck.card_answers.where(user: current_user).any? %>
+          <%= link_to 'See results', deck_results_path(@deck), class: 'btn btn-secondary btn-lg' %>
+        <% end %>
       <p class="mt-4">Flashcards made by <%= @deck.user.email %></p>
-
-      <p>Leave a review:</p>
-      <%= render 'reviews/form', deck: @deck, review: @review %>
 
       <h2>Reviews (<%= @reviews.where.not(content: nil).count %>)</h2>
       <% @reviews.each do |review| %>

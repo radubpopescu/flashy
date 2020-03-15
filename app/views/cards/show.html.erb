@@ -24,6 +24,16 @@
           <%= link_to 'I knew it!', deck_card_user_knows_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-primary show', style: "display: none;", method: :post %>
           <%= link_to 'I didn\'t know!', deck_card_user_does_not_know_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-danger show', style: "display:none;", method: :post %>
         </div>
+        <div class="user-actions">
+          <% if @deck.user == current_user %>
+        <%= link_to edit_deck_card_path(@deck, @card) do %>
+          <i class="fas fa-edit fa"></i>
+        <% end %>
+        <%= link_to deck_card_path(@deck, @card), method: :delete, data: {confirm: 'Delete the card?'} do %>
+          <i class="fas fa-trash fa"></i>
+        <% end %>
+      <% end %>
+        </div>
       </div>
     </div>
   </div>
