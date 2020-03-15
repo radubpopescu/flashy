@@ -4,28 +4,42 @@
       <p style="color: #8F00FF;"><strong>You have studied
         <%= @current_card %>
       out of <%= @count_cards %> cards in this deck</strong></p>
-      <div class="progress" style="background-color: rgba(143, 0, 255, 0.21) !important;border-radius: 36px; width: 720px; height: 26px;">
-        <div class="progress-bar" role="progressbar" style="width: <%= @percentage %>%; background-color: #8F00FF !important;border-radius: 36px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><strong><%= @percentage.round %>%</strong></div>
+      <div class="progress" style="background-color: rgba(143, 0, 255, 0.21);border-radius: 36px; width: 720px; height: 26px;">
+        <div class="progress-bar" role="progressbar" style="width: <%= @percentage %>%; background-color: #8F00FF;border-radius: 36px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><strong><%= @percentage.round %>%</strong></div>
       </div>
     </div>
   </div>
   <div class="row justify-content-center">
     <div class="col-12 col-sm-12 col-md-9 col-lg-7 col-xl-8">
-      <div class="card mt-4 thefront" style="width: 720px; height: 420px; box-shadow: 0px 6px 12px rgba(109,109,109,.29); border-radius: 17px;">
-        <div class="card-body d-flex flex-column align-items-center" style="width: 600px; margin: 0 auto;" >
-          <h4><%= @deck.name %></h4>
-          <h5 class="card-title"><%= @card.front %></h5>
-          <textarea name="Text1" id='answer' cols="40" rows="5" style="width:600px;"></textarea>
-          <br>
-          <span class="flip m-3" type="submit" style="background-color: #8F00FF;box-shadow: 0px 4px 8px rgba(143, 0, 255, 0.49);border-radius: 39px; color: white; width: 244px; height: 51px; position: absolute;top:250px; left:200px;">
-            <p style="text-align: center;line-height: 50px;"><strong>FLIP</strong></p>
-          </span>
-          <br>
-          <%= link_to 'I knew it!', deck_card_user_knows_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-primary show', style: "display: none;", method: :post %>
-          <%= link_to 'I didn\'t know!', deck_card_user_does_not_know_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-danger show', style: "display:none;", method: :post %>
+      <div class="mt-4 maincontainer">
+        <div class="thecard">
+          <div class="card-body d-flex flex-column align-items-center thefront p-4" style="width: 720px; margin: 0 auto;" >
+            <h4><%= @deck.name %></h4>
+            <h5 class="card-title"><%= @card.front %></h5>
+            <textarea name="Text1" id='answer' cols="40" rows="5" style="width:600px;"></textarea>
+            <br>
+            <button class="flip m-3" type="submit">
+              <p><strong>FLIP</strong></p>
+            </button>
+            <br>
+          </div>
+          <div class="card-body d-flex flex-column align-items-center theback p-4" style="width: 720px; margin: 0 auto;">
+            <h4><%= @deck.name %></h4>
+            <h5 class="card-title"><%= @card.front %></h5>
+            <p class="card-text show mt-4"><%= @card.back %></p>
+            <br>
+            <div class="d-flex">
+              <%= link_to 'I knew it!', deck_card_user_knows_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-primary show mx-3', style: "display: none;", method: :post %>
+              <%= link_to 'I didn\'t know!', deck_card_user_does_not_know_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-danger show mx-3', style: "display:none;", method: :post %>
+            </div>
+          </div>
         </div>
-        <div class="user-actions">
-          <% if @deck.user == current_user %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="user-actions">
+      <% if @deck.user == current_user %>
         <%= link_to edit_deck_card_path(@deck, @card) do %>
           <i class="fas fa-edit fa"></i>
         <% end %>
@@ -33,23 +47,6 @@
           <i class="fas fa-trash fa"></i>
         <% end %>
       <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row justify-content-center">
-    <div class="col-12 col-sm-12 col-md-9 col-lg-7 col-xl-8">
-      <div class="card mt-4" style="width: 720px; height: 420px; box-shadow: 0px 6px 12px rgba(109,109,109,.29); border-radius: 17px;">
-        <div class="card-body d-flex flex-column align-items-center" style="width: 600px; margin: 0 auto;">
-          <h4><%= @deck.name %></h4>
-          <h5 class="card-title"><%= @card.front %></h5>
-          <p class="card-text show mt-4"><%= @card.back %></p>
-          <br>
-          <%= link_to 'I knew it!', deck_card_user_knows_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-primary show', style: "display: none;", method: :post %>
-          <%= link_to 'I didn\'t know!', deck_card_user_does_not_know_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-danger show', style: "display:none;", method: :post %>
-        </div>
-      </div>
     </div>
   </div>
 </div>
