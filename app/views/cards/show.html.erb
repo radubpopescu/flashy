@@ -29,8 +29,8 @@
             <p class="card-text show mt-4"><%= @card.back %></p>
             <br>
             <div class="d-flex">
-              <%= link_to 'I knew it!', deck_card_user_knows_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-primary show mx-3', style: "display: none;", method: :post %>
-              <%= link_to 'I didn\'t know!', deck_card_user_does_not_know_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-danger show mx-3', style: "display:none;", method: :post %>
+              <%= link_to 'I knew it!', deck_card_user_knows_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-primary show mx-3', method: :post %>
+              <%= link_to 'I didn\'t know!', deck_card_user_does_not_know_path(deck: @deck, card_id: @card, wrong: params[:wrong]), class: 'btn btn-danger show mx-3', method: :post %>
             </div>
           </div>
         </div>
