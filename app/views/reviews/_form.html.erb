@@ -1,5 +1,8 @@
-<%= simple_form_for [deck, review], url: deck_reviews_path(deck), method: :post do |f| %>
-  <%= f.input :content %>
-  <%= f.input :review_value, collection: [[1, 'upvote'], [-1, 'downvote']], label_method: :second, value_method: :first, as: :radio_buttons, include_hidden: false %>
-  <%= f.submit "add review", class: "btn btn-primary" %>
-<% end %>
+<div class="mb-5">
+  <%= simple_form_for [deck, review], url: deck_reviews_path(deck), method: :post do |f| %>
+    <%= f.input :content, label: 'Give us some feedback!' %>
+    <%= f.input :review_value, collection: [[1, 'Like'], [-1, 'Dislike']],label_method: :second, value_method: :first, as: :radio_buttons, include_hidden: false %>
+    <%= f.submit "add review", class: "btn btn-primary" %>
+  <% end %>
+</div>
+

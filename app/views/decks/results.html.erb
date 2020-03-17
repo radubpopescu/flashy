@@ -8,14 +8,6 @@
       <% data = [["Correct", @results_positive],
                 ["Wrong", @results_negative]] %>
       <%= pie_chart data, library: { pieSliceText: 'value' } %>
-      <ul>
-        <li>
-          Knew: <%= @results_positive %>
-        </li>
-        <li>
-          Did not know: <%= @results_negative %>
-        </li>
-      </ul>
       <strong>
         Total: <%= @results_positive + @results_negative %>
       </strong>
@@ -28,7 +20,7 @@
         <%= link_to "Re-try wrong ones", deck_start_playing_path(@deck, wrong: true), class: 'btn btn-primary btn-lg'  %>
       <% end %>
       <%= link_to "Play again", deck_start_playing_path(@deck, wrong: false), class: 'btn btn-secondary btn-lg' %>
-      <%= link_to "Back to show", deck_path(@deck), class: 'btn btn-secondary btn-lg' %>
+      <%= link_to "Return to Deck", deck_path(@deck), class: 'btn btn-secondary btn-lg' %>
       <div class="review mt-4">
         <h2>Leave a review:</h2>
         <%= render 'reviews/form', deck: @deck, review: @review %>
