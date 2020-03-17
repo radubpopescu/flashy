@@ -35,14 +35,58 @@
   top: 630px;
   left: 1261px;
 }
+.botoes{
+  background-color: white;
+  height: 50px;
+  width: 260px;
+  position: absolute;
+  box-shadow: 0 0 30px 0 #d1d1d1;
+  overflow: hidden;
+  top: 611px;
+}
 
+input[type="radio"]{
+  display:none;
+}
 
-  //  <div class="row justify-content-center mt-5">
-  //   <div class="card show" style="width: 720px; border-radius: 17px;display:none; height: 151px; box-shadow: 0px 6px 12px rgba(109,109,109,.29);">
-  //     <div class="card-body" style="margin: 0 auto;">
-  //       <p class="card-text show mt-4" style="display:none"><strong>Answer:</strong></p>
-  //       <br>
-  //       <p class="card-text show mt-4" style="display:none"><%=# @card.back %></p>
-  //     </div>
-  //   </div>
-  // </div>
+input[type="radio"]:checked + label{
+  background-position: 0 -90px;
+  color: white;
+  transition: 1s;
+}
+
+.label1,.label2{
+  display:block;
+  height: 140px;
+  width:130px;
+  background-size: 130px 180px;
+  background: linear-gradient(
+    to bottom,
+    white 0,white 90px,
+    #2c2c2c 90px, #2c2c2c 180px
+    );
+  position: absolute;
+  top: 0;
+  transition: 0.5s;
+  color: #2c2c2c;
+}
+
+.label2{
+  right: 0;
+}
+
+.vote{
+  display: flex;
+  height: 50px;
+  width: 130px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.review-button{
+  position: absolute;
+  bottom: -80px;
+  left:15px;
+}

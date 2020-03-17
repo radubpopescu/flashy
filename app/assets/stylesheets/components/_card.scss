@@ -104,17 +104,4 @@
   transform: rotateY(180deg);
 }
 
-input[type="radio"]{
-  display:none;
-}
 
-input[type="radio"]:checked + label{
-  background-color: black;
-}
-
-
-label.collection_radio_buttons{
-  height: 100px;
-  width: 100px;
-  border: 6px solid black;
-}
