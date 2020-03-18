@@ -9,11 +9,11 @@ function flipCard() {
 
   flipButton.addEventListener('click', () => {
     card.style = "transform: rotateY(180deg)";
-    arrayShow.forEach((element) => {
-      element.style.display = 'inline'
-    });
+    // arrayShow.forEach((element) => {
+    //   element.style.display = 'inline'
+    // });
     flipButton.style.display = 'none';
-    answer.disabled = 'true';
+    // answer.disabled = 'true';
   });
 
 }
