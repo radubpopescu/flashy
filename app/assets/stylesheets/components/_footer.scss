@@ -1,3 +1,7 @@
+#logo-footer {
+  margin-left: -16px;
+}
+
 .fa-bolt:hover {
   color: $purple;
 }
@@ -21,10 +25,11 @@
 
     ul {list-style-type: none;}
     li a {
-      color: white;
+      color: rgba(255, 255, 255, 0.7);
       transition: color .2s;
       font-weight: 300;
-      letter-spacing: 1px;
+      font-family: $a-p-font;
+      letter-spacing: 0.07rem;
 
       &:hover {
         text-decoration:none;
@@ -68,10 +73,6 @@
   .location{
     i{font-size: 18px;}
   }
-}
-
-#logo-footer {
-  margin-left: -16px;
 }
 
 .copyright {
