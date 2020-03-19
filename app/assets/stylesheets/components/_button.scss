@@ -54,7 +54,7 @@ input[type="radio"]{
 input[type="radio"]:checked + label{
   background-position: 0 -90px;
   color: white;
-  transition: 1s;
+  transition: .5s;
 }
 
 .label1,.label2{
