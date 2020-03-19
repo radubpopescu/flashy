@@ -1,5 +1,8 @@
-
 <!-- own decks -->
+<h2>Own decks</h2>
+<!-- number of decks created -->
+
+<!-- list of own decks -->
 <ul>
   <% @decks.each do |deck| %>
     <li><%= deck.name %></li>
@@ -8,8 +11,47 @@
 
 
 <!-- upvoted decks -->
+<h2>Upvoted decks</h2>
+
+<!-- number of upvoted decks -->
+<p><strong><%= @upvoted_decks.count %></strong> </p>
+
+<!-- upvoted decks list -->
 <ul>
   <% @upvoted_decks.each do |deck| %>
     <li><%= deck.name %></li>
+  <% end -%>
+</ul>
+
+
+<!-- History -->
+<h2>History</h2>
+
+<!-- list of previous decks -->
+<ul>
+  <% @history.each do |deck| %>
+    <li><%= deck.name %></li>
+  <% end -%>
+</ul>
+
+
+<!-- own reviews -->
+<h2>reviews</h2>
+<!-- number of reviews -->
+
+<!-- number  of upvotes -->
+
+<!-- number of downvotes -->
+
+<!-- reviews list -->
+<ul>
+  <% @reviews.each do |review| %>
+    <li><%= review.content %>
+      <% if review.review_value == 1 %>
+          <p>(upvote!)</p>
+        <% else %>
+          <p>(downvote!)</p>
+      <% end %>
+    </li>
   <% end -%>
 </ul>

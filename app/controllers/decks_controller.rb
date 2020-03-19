@@ -9,6 +9,9 @@ class DecksController < ApplicationController
     else
       @decks = category_deck.sort_by(&:review_total).reverse
     end
+    if session[:last_deck].nil?
+      session[:last_deck] ||= []
+    end
   end
 
   def new
