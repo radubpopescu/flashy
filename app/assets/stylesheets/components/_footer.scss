@@ -1,0 +1,88 @@
+.fa-bolt:hover {
+  color: $purple;
+}
+
+.footer {
+  width:100%;
+  margin-bottom: 0px;
+  background: rgba(43,43,43,1);
+  color: white;
+  position: relative;
+  z-index: 2;
+
+  u {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .links {
+    font-family: $a-p-font;
+    letter-spacing: 0.07rem;
+    text-align: center;
+
+    ul {list-style-type: none;}
+    li a {
+      color: white;
+      transition: color .2s;
+      font-weight: 300;
+      letter-spacing: 1px;
+
+      &:hover {
+        text-decoration:none;
+        color: $purple;
+        }
+    }
+  }
+  .about-company {
+
+    p {
+      font-family: $a-p-font;
+      letter-spacing: 0.07rem;
+    }
+
+    h2 {
+      color: rgba(255, 255, 255, 0.7);
+      font-family: $a-p-font;
+      font-style: lighter;
+      font-weight: 100;
+      font-size: 40px;
+      line-height: 46px;
+
+    }
+
+    h2:hover {
+      text-decoration:none;
+      color: $purple;
+    }
+
+    i {
+      font-size: 25px;
+      margin-left: -3px;
+    }
+    a {
+      color: rgba(255, 255, 255, 0.7);
+      transition: color .2s;
+      &:hover { color:#4180CB; }
+    }
+  }
+
+  .location{
+    i{font-size: 18px;}
+  }
+}
+
+#logo-footer {
+  margin-left: -16px;
+}
+
+.copyright {
+  font-family: $a-p-font;
+  margin-top: 71px;
+  margin-bottom: 0px;
+  display: inline-table;
+  text-align: center;
+
+  p {
+    border-top:1px dotted rgba(255,255,255,.1);
+    letter-spacing: 0.07rem;
+  }
+}

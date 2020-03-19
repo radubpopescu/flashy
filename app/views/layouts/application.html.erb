@@ -11,13 +11,14 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
+    <%= render 'shared/menu-bar' %>
     <div class="main-container">
-      <%= render 'shared/menu-bar' %>
       <%= render 'shared/navbar' %>
       <%= yield %>
       <%= render 'shared/flashes' %>
-      <%= javascript_include_tag 'application' %>
-      <%= javascript_pack_tag 'application' %>
     </div>
+    <%= render 'shared/footer' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
   </body>
 </html>
