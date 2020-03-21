@@ -27,9 +27,9 @@ category = Category.create!(name: 'category')
 
 puts 'creating all decks'
 decks = []
-decks << deck_1 = Deck.create!(name: 'Learn HTML, CSS & JS', user: user, category: tech)
+decks << deck_1 = Deck.create!(name: 'Learn HTML, CSS & JS', user: user, category: tech, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
 decks << deck_2 = Deck.create!(name: 'How DNA Works', user: user, category: bio)
-decks << deck_3 = Deck.create!(name: 'Physics for dummies', user: user, category: physics)
+decks << deck_3 = Deck.create!(name: 'Physics for dummies', user: user, category: physics,description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
 decks << deck_3 = Deck.create!(name: 'Ruby for dummies', user: user, category: tech)
 decks << deck_4 = Deck.create!(name: 'Python for dummies', user: user, category: tech)
 decks << deck_5 = Deck.create!(name: 'Coronvirus for dummies', user: user, category: bio)
