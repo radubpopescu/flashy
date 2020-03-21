@@ -1,4 +1,4 @@
 meta_product_name: "Flashy"
 meta_title: "Flashy - flashcards made easy"
 meta_description: "Bring on the flashy revolution"
-meta_image: "cover.png" # should exist in `app/assets/images/`
+meta_image: "favicon.ico" # should exist in `app/assets/images/`
