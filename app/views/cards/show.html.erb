@@ -16,9 +16,9 @@
           <div class="card-body d-flex flex-column align-items-center thefront p-4" style="width: 720px; margin: 0 auto;" >
             <h4><%= @deck.name %></h4>
             <h5 class="card-title"><%= @card.front %></h5>
-            <textarea name="Text1" id='answer' cols="40" rows="5" style="width:600px;" autofocus></textarea>
+            <textarea name="Text1" id='answer' cols="40" rows="5" style="width:600px;" autofocus placeholder="Alt + p to flip the card"></textarea>
             <br>
-            <button class="flip m-3" type="submit">
+            <button class="flip m-3" type="submit" accesskey="p">
               <p><strong>FLIP</strong></p>
             </button>
             <br>
@@ -29,8 +29,8 @@
             <p class="card-text show mt-4"><%= @card.back %></p>
             <br>
             <div class="d-flex">
-              <%= link_to 'I knew it!', deck_card_user_knows_path(deck: @deck, card_id: @card, wrong: params[:wrong]),style: 'font-weight: bold;', class: 'btn btn-primary show mx-3', method: :post %>
-              <%= link_to 'I didn\'t know!', deck_card_user_does_not_know_path(deck: @deck, card_id: @card, wrong: params[:wrong]),style: 'font-weight: bold;', class: 'btn btn-danger show mx-3', method: :post %>
+              <%= link_to 'I knew it!', deck_card_user_knows_path(deck: @deck, card_id: @card, wrong: params[:wrong]),style: 'font-weight: bold;', class: 'btn btn-primary show mx-3', accesskey:"k", method: :post %>
+              <%= link_to 'I didn\'t know!', deck_card_user_does_not_know_path(deck: @deck, card_id: @card, wrong: params[:wrong]),style: 'font-weight: bold;', class: 'btn btn-danger show mx-3',accesskey: "o", method: :post %>
             </div>
           </div>
         </div>

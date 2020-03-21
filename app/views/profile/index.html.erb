@@ -92,13 +92,14 @@
         <% if @reviews.count > 1 %>
           <ul>
             <% @reviews.first(5).each do |review| %>
-              <li><%= review.content %>
-                <% if review.review_value == 1 %>
-                    <p>(upvote!)</p>
-                  <% else %>
-                    <p>(downvote!)</p>
-                <% end %>
-              </li>
+              <p><%= link_to review.deck.name , deck_path(review.deck) %>
+              <% if review.review_value == 1 %>
+                  (upvote!)
+                <% else %>
+                  (downvote!)
+              <% end %>
+              </p>
+              <li>"<%= review.content %>"</li>
             <% end -%>
           </ul>
         <% else %>

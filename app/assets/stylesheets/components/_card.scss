@@ -164,6 +164,17 @@
 .last-reviews{
   background: #FFFFFF;
   padding: 28px 34px;
+  p{
+    margin-bottom: 0;
+  }
+  ul{
+    padding-inline-start: 0px;
+  }
+  li{
+    margin-bottom: 40px;
+    font-style: italic;
+    list-style-type: none;
+  }
 }
 .top-decks{
   width: 320px;
