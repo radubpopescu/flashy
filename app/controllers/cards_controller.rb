@@ -7,6 +7,7 @@ class CardsController < ApplicationController
 
   def show
       @deck = Deck.find(params["deck_id"])
+      session[:last_deck].unshift(@deck.id)
       @card = @deck.cards.find(params["id"])
       @count_cards = session[:cards_count]
       @current_card = session[:current_card]
