@@ -2,19 +2,19 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #8F00FF;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #1BCB7F;
+  background: #7502CE;
   color: white;
 }
 
 .flip{
   background-color: #8F00FF;
   border-radius: 39px;
-  box-shadow: 0px 4px 8px rgba(143, 0, 255, 0.49);
+  box-shadow: 0px 6px 12px rgba(143, 0, 255, 0.29);
   color: white;
   width: 244px;
   height: 51px;
@@ -28,6 +28,28 @@
   &:hover{
     background-color: #7502CE;
   }
+}
+
+.btn-primary{
+  border-radius: 3px;
+  box-shadow: 0px -1px 7px rgba(143, 0, 255, 0.29);
+  transition: .3s;
+  padding: 8px 34px;
+}
+
+.btn-secondary{
+  border-radius: 3px;
+  box-shadow: 0px -1px 7px rgba(43, 43, 43, 0.3);
+  transition: .3s;
+}
+
+.btn-danger{
+  border-radius: 3px;
+  color: white;
+  box-shadow: 0px -1px 7px rgba(43, 43, 43, 0.3);
+  padding: 8px 34px;
+  transition: .3s;
+
 }
 
 .user-actions{
