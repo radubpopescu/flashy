@@ -8,11 +8,18 @@
 
 .footer {
   width:100%;
-  margin-bottom: 0px;
+  // margin-bottom: 0px;
   background: rgba(43,43,43,1);
   color: white;
   position: relative;
   z-index: 2;
+
+  p {
+    font-family: $a-p-font;
+    font-size: 30px;
+    letter-spacing: 0.07rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
 
   u {
     color: rgba(255, 255, 255, 0.7);
@@ -28,7 +35,7 @@
       color: rgba(255, 255, 255, 0.7);
       transition: color .2s;
       font-weight: 300;
-      font-family: $a-p-font;
+      font-family: $h3-font;
       letter-spacing: 0.07rem;
 
       &:hover {

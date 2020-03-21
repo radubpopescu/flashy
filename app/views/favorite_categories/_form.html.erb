@@ -1,4 +1,10 @@
 <%= simple_form_for current_user, url: favorite_categories_path, method: :post do |f| %>
+  <div class="col">
    <%= f.association :categories, as: :check_boxes%>
-   <%= f.button :submit, value: " Choose"%>
+
+  </div>
+  <div class="col">
+   <%= f.button :submit, value: "Choose"%>
+
+  </div>
 <%end%>
