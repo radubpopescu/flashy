@@ -1,3 +1,12 @@
+.categories-banner {
+  background: linear-gradient(-226deg, rgba(43, 43, 43, 0.49) 31%, rgba(143, 0, 255, 0.38) 62%, rgba(255, 255, 255, 0.934611) 10028%), url(banner/banner-girl-books2.png);
+  background-size: cover;
+  width: 100%;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-color: #353547;
+}
+
 .category-index {
   display: flex;
   text-align: center;
@@ -5,6 +14,10 @@
   align-items: center;
   padding-right: 130px;
   padding-top: 60px;
+  background-color: #3535472e;
+  height: 540px;
+  border-radius: 5px;
+  box-shadow: 4px 5px 17px rgba(10,10,10,0.2);
 
   h1 {
     color: $black;
@@ -70,7 +83,7 @@
     }
 
     .form-check-label {
-      color: black;
+      color: white;
       font-family: $a-p-font;
       font-weight: bold;
       z-index: -1;
@@ -98,7 +111,7 @@
 
 }
 
-.purple label { color: white }
+
 
 .white {
   color: white;
