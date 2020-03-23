@@ -8,13 +8,12 @@ function markCategories() {
         selected_category.classList.toggle("purple");
 
       } else {
-
         selected_category.children[0].checked = false;
         selected_category.classList.toggle("purple");
       }
-
     })
   );
 }
+
 
 export { markCategories } ;
