@@ -7,6 +7,9 @@
   background-color: #353547;
   padding-top: 60px;
   padding-right: 70px;
+  display: flex;
+  height: 100vh;
+
 }
 
 .category-index {
@@ -89,6 +92,7 @@
       font-family: $a-p-font;
       font-weight: bold;
       // z-index: -1;
+
       &:hover {
         cursor: pointer;
       }

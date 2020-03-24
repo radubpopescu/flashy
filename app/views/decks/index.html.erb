@@ -10,7 +10,7 @@
         <% @decks.each do |deck| %>
 
           <%= link_to deck_path(deck), class: "deck-link bd-highlight" do %>
-            <div class="card mb-4 deck-card">
+            <div class="card mb-4 deck-card" style="background-image: url(<%= url_for(deck.category.photo_url) %>)">
                 <div class="card-body deck-body">
 
                   <div class="deck-title bd-highlight">
