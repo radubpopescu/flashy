@@ -18,10 +18,12 @@
   -webkit-box-align: center;
   align-items: center;
   padding-right: 130px;
+  padding-bottom: 24px;
   background-color: #3535472e;
   height: 540px;
-  border-radius: 5px;
-  box-shadow: 4px 5px 17px rgba(10,10,10,0.2);
+  border-radius: 8px;
+  box-shadow: 0px 0px 19px 5px #47525d73;
+  z-index: 0;
 
   h1 {
     color: $black;
@@ -34,10 +36,10 @@
 }
 
 .form-group {
-  justify-content: center;
-  flex-wrap: wrap;
+  // justify-content: center;
+  // flex-wrap: wrap;
+  // justify-content: center;
   max-height: 260px;
-  justify-content: center;
   margin-bottom: 80px;
   margin-top: 16px;
 }
@@ -84,13 +86,14 @@
     &:hover {
       background-color: $light-purple;
       cursor: pointer;
+
     }
 
     .form-check-label {
       color: white;
-      font-family: $a-p-font;
+      font-family: $h1-h2-font;
       font-weight: bold;
-      z-index: 0;
+      z-index: -1;
 
       &:hover {
         cursor: pointer;
@@ -101,7 +104,7 @@
   .form-check-input {
     display: none;
     margin: 0px;
-    z-index: -1;
+    // z-index: -1;
   }
 }
 
@@ -112,7 +115,11 @@
 .purple {
   background-color: rgba(143, 0, 255, 0.7) !important;
   color: white !important;
-  z-index: 1;
+  // z-index: 1;
+
+  .form-check-label {
+    -webkit-text-fill-color: yellow;
+  }
 
 }
 
