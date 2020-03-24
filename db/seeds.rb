@@ -74,7 +74,7 @@ puts 'creating review values'
 Deck.all.each do |deck|
   User.all.each do |user|
     random = rand(1..10) >= 3? 1 : -1
-    Review.create(review_value: random, deck_id: deck.id, user_id: user.id)
+    Review.create(review_value: random, deck_id: deck.id, user_id: user.id, content: Faker::TvShows::MichaelScott.quote)
   end
 end
 
