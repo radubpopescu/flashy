@@ -7,7 +7,7 @@ Deck.destroy_all
 User.destroy_all
 
 puts 'creating users'
-user = User.create!(email: 'admin@flashy.com', password: '123456')
+user = User.create!(email: 'admin@flashy.com', password: '123456', username: 'admin')
 50.times do
   User.create!(email: Faker::Internet.email, username: Faker::Name.first_name, password: "123456")
 end
@@ -27,7 +27,7 @@ others = Category.create!(name: 'Others', photo_url: Faker::LoremFlickr.image(si
 
 puts 'creating all decks'
 decks = []
-decks << deck_1 = Deck.create!(name: 'Learn HTML, CSS & JS', user: user, category: tech, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
+decks << deck_1 = Deck.create!(name: 'Learn HTML, CSS & JS', user: user, category: tech, description: "The best deck on learning the basics of web development, the essentials of HTML, CSS and Javascript!")
 decks << deck_2 = Deck.create!(name: 'How DNA Works', user: user, category: bio)
 decks << deck_3 = Deck.create!(name: 'Physics for dummies', user: user, category: physics,description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
 decks << deck_3 = Deck.create!(name: 'Introduction to Ruby', user: user, category: tech)
@@ -44,7 +44,7 @@ decks << deck_13 = Deck.create!(name: 'Vue JS for beginners', user: user, catego
 decks << deck_14 = Deck.create!(name: 'React JS for beginners', user: user, category: tech)
 decks << deck_15 = Deck.create!(name: 'Newton\'s Laws', user: user, category: physics)
 decks << deck_16 = Deck.create!(name: 'Pascal\'s Law', user: user, category: physics)
-decks << deck_17 = Deck.create!(name: 'Ohm\'s Law and Electromagnetism', user: user, category: physics)
+decks << deck_17 = Deck.create!(name: 'Electromagnetism', user: user, category: physics)
 decks << deck_18 = Deck.create!(name: 'Periodic Table', user: user, category: chemistry)
 decks << deck_19 = Deck.create!(name: 'React Native advanced', user: user, category: tech)
 decks << deck_20 = Deck.create!(name: 'Flutter Basics', user: user, category: tech)
@@ -81,7 +81,7 @@ Deck.all.each do |deck|
 end
 
 puts "creating user Bernardo Goes"
-user_01 = User.create!(email: "bernardo@gmail.com", password: "123456")
+user_01 = User.create!(email: "bernardo@gmail.com", password: "123456", username: "Bernardo")
 FavoriteCategory.create!(user: user_01, category: bio)
 puts "created Bernardo Goes"
 
