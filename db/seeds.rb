@@ -19,12 +19,11 @@ puts 'creating categories'
 tech = Category.create!(name: 'technology', photo_url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80')
 bio = Category.create!(name: 'biology', photo_url: 'https://images.unsplash.com/uploads/14114005966624c90b007/60cc31c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80')
 physics = Category.create!(name: 'physics', photo_url: 'https://images.unsplash.com/photo-1576319155264-99536e0be1ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1275&q=80')
-coronavirus = Category.create!(name: 'coronavirus', photo_url: 'https://images.unsplash.com/photo-1584743579123-25274517da76?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2515&q=80')
-sex = Category.create!(name: 'sex')
-beer = Category.create!(name: 'beer')
-feijoada = Category.create!(name: 'feijoada')
-random = Category.create!(name: 'random')
-category = Category.create!(name: 'category')
+languages = Category.create!(name: 'languages', photo_url: 'https://images.unsplash.com/photo-1584743579123-25274517da76?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2515&q=80')
+chemistry = Category.create!(name: 'chemistry')
+history = Category.create!(name: 'history')
+others = Category.create!(name: 'others')
+
 
 puts 'creating all decks'
 decks = []
