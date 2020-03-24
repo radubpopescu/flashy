@@ -1,8 +1,8 @@
+<div class="deck-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @deck.category.photo_url %>);">
+</div>
 <div class="container">
   <div class="row">
     <div class="col-12 mt-4">
-
-
       <h1><%= @deck.name %></h1>
       <% if @deck.user == current_user %>
         <%= link_to edit_deck_path(@deck) do %>
