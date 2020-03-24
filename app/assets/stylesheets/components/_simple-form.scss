@@ -5,7 +5,7 @@
   z-index: 0;
   background-repeat: no-repeat;
   background-color: #353547;
-  padding-top: 60px;
+  padding-top: 80px;
   padding-right: 70px;
   display: flex;
   height: 100vh;
@@ -18,7 +18,6 @@
   -webkit-box-align: center;
   align-items: center;
   padding-right: 130px;
-  // padding-top: 60px;
   background-color: #3535472e;
   height: 540px;
   border-radius: 5px;
@@ -47,7 +46,6 @@
 .list-categories {
   margin-top: 10px;
   text-transform: capitalize;
-  color: black;
 
   .col-form-label {
     display: none;
@@ -92,7 +90,7 @@
       color: white;
       font-family: $a-p-font;
       font-weight: bold;
-      // z-index: -1;
+      z-index: 0;
 
       &:hover {
         cursor: pointer;
@@ -103,7 +101,7 @@
   .form-check-input {
     display: none;
     margin: 0px;
-    z-index: 1;
+    z-index: -1;
   }
 }
 
@@ -114,7 +112,7 @@
 .purple {
   background-color: rgba(143, 0, 255, 0.7) !important;
   color: white !important;
-  // z-index: 1;
+  z-index: 1;
 
 }
 
