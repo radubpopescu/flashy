@@ -15,13 +15,15 @@ end
 puts 'destroying categories'
 Category.destroy_all
 puts 'creating categories'
-tech = Category.create!(name: 'Technology')
-bio = Category.create!(name: 'Biology')
-physics = Category.create!(name: 'Physics')
-languages = Category.create!(name: 'Languages')
-chemistry = Category.create!(name: 'Chemistry')
-history = Category.create!(name: 'History')
-others = Category.create!(name: 'Others')
+
+tech = Category.create!(name: 'Technology', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['technology']))
+bio = Category.create!(name: 'Biology', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['biology']))
+physics = Category.create!(name: 'Physics', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['physics']))
+languages = Category.create!(name: 'Languages', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['language']))
+chemistry = Category.create!(name: 'Chemistry', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['chemistry']))
+history = Category.create!(name: 'History', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['history']))
+others = Category.create!(name: 'Others', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['sports']))
+
 
 puts 'creating all decks'
 decks = []
