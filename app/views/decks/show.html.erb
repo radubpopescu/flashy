@@ -24,15 +24,14 @@
         <% if @deck.card_answers.where(user: current_user).any? %>
           <%= link_to 'See results', deck_results_path(@deck), class: 'btn btn-secondary btn-lg' %>
         <% end %>
-      <p class="mt-4">Flashcards made by <%= @deck.user.email %></p>
+      <p class="mt-4">Flashcards made by <%= @deck.user.username %></p>
 
       <h2>Reviews (<%= @reviews.where.not(content: nil).count %>)</h2>
       <% @reviews.each do |review| %>
-        <% if review.review_value == 1 %>
-          <p><%= review.content %></p>
-        <% else %>
-          <p><%= review.content %></p>
-        <% end %>
+          <div class="comment">
+          <h6><strong><%= review.user.username %></strong></h6>
+          <p>"<%= review.content %>"</p>
+          </div>
       <% end -%>
     </div>
   </div>
