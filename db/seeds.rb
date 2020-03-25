@@ -17,13 +17,21 @@ Category.destroy_all
 puts 'creating categories'
 
 
-tech = Category.create!(name: 'Technology', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['technology']))
-bio = Category.create!(name: 'Biology', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['biology']))
-physics = Category.create!(name: 'Physics', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['physics']))
-languages = Category.create!(name: 'Languages', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['language']))
-chemistry = Category.create!(name: 'Chemistry', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['chemistry']))
-history = Category.create!(name: 'History', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['history']))
-others = Category.create!(name: 'Others', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['sports']))
+# tech = Category.create!(name: 'Technology', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['technology']))
+# bio = Category.create!(name: 'Biology', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['biology']))
+# physics = Category.create!(name: 'Physics', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['physics']))
+# languages = Category.create!(name: 'Languages', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['language']))
+# chemistry = Category.create!(name: 'Chemistry', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['chemistry']))
+# history = Category.create!(name: 'History', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['history']))
+# others = Category.create!(name: 'Others', photo_url: Faker::LoremFlickr.image(size: "500x400", search_terms: ['sports']))
+
+tech = Category.create!(name: 'Technology', photo_url: "https://res.cloudinary.com/cloudhabits/image/upload/v1585160811/technology_peld2s.png")
+bio = Category.create!(name: 'Biology', photo_url: "https://res.cloudinary.com/cloudhabits/image/upload/v1585160810/biology_tdyvdf.jpg")
+physics = Category.create!(name: 'Physics', photo_url: "https://res.cloudinary.com/cloudhabits/image/upload/v1585160811/physics_bv7ijb.jpg")
+languages = Category.create!(name: 'Languages', photo_url: "https://res.cloudinary.com/cloudhabits/image/upload/v1585160812/languages_cdw6f7.jpg")
+chemistry = Category.create!(name: 'Chemistry', photo_url: "https://res.cloudinary.com/cloudhabits/image/upload/v1585160811/chemistry_j1r9f8.jpg")
+history = Category.create!(name: 'History', photo_url: "https://res.cloudinary.com/cloudhabits/image/upload/v1585160812/history_mf1jcl.jpg")
+others = Category.create!(name: 'Others', photo_url: "https://res.cloudinary.com/cloudhabits/image/upload/v1585161068/others_uw1pp8.jpg")
 
 
 
@@ -40,8 +48,8 @@ decks << deck_7 = Deck.create!(name: 'Japanese verbs 1', user: user, category: l
 decks << deck_8 = Deck.create!(name: 'Japanese verbs 2', user: user, category: languages, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
 decks << deck_9 = Deck.create!(name: 'Colours in French', user: user, category: languages, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
 decks << deck_10 = Deck.create!(name: 'Spanish pronouns', user: user, category: languages, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
-decks << deck_11 = Deck.create!(name: 'Countries in Italian', user: user, category: languages, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
-decks << deck_12 = Deck.create!(name: 'Animals in Portuguese', user: user, category: languages, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
+decks << deck_11 = Deck.create!(name: 'Countries in Italian', user: user, category: history, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
+decks << deck_12 = Deck.create!(name: 'Animals in Portuguese', user: user, category: history, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
 decks << deck_13 = Deck.create!(name: 'Vue JS for beginners', user: user, category: tech, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
 decks << deck_14 = Deck.create!(name: 'React JS for beginners', user: user, category: tech, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")
 decks << deck_15 = Deck.create!(name: 'Newton\'s Laws', user: user, category: physics, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus mi sed ex ornare vestibulum quis facilisis tortor. Nulla sapien sem, feugiat ac suscipit ac, placerat nec ex. Integer elit risus, semper non eros non, feugiat imperdiet orci. Duis hendrerit tempor risus in ornare. Nam ipsum tortor, tincidunt eget felis et, varius fermentum felis.")

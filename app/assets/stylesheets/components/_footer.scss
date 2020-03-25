@@ -27,13 +27,13 @@
 
   .links {
     font-family: $a-p-font;
-    letter-spacing: 0.07rem;
-    text-align: center;
-    padding: 16px 0px 10px 0px;
+    // letter-spacing: 0.07rem;
+    text-align: left;
+    padding: 16px 0px 10px 233px;
 
     p {
       font-size: 24px;
-      text-decoration: underline;
+      // text-decoration: underline;
     }
 
     ul {list-style-type: none;}
@@ -41,7 +41,7 @@
       color: rgba(255, 255, 255, 0.7);
       transition: color .2s;
       font-weight: 300;
-      font-family: $h3-font;
+      font-family: $a-p-font;
       letter-spacing: 0.07rem;
 
       &:hover {

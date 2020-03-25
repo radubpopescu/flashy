@@ -11,14 +11,15 @@
 
 
 .deck-bg {
-  background: #adadad;
-  opacity: 0.71;
+  background: #FFFFFF;
+  opacity: 0.85;
   border-radius: 2px 2px 0px 24px;
   margin: 65px -10px -45px -10px;
   height: 160px;
   min-width: 100%;
   min-height: 160px;
   box-shadow: 0px -3px 4px 0px #131313;
+  z-index: 0;
 
 }
 
@@ -52,6 +53,7 @@
     flex-direction: column;
     text-align: -webkit-center;
     justify-content: center;
+    z-index: 1;
 
     .deck-title {
       width: 100%;
@@ -78,7 +80,7 @@
         font-size: 16px;
         line-height: 22px;
         color: #000000;
-        text-shadow: 1px 4px 17px #000000;
+        text-shadow: 0px -1px 4px #8f00ff57;
       }
 
     }
