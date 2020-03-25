@@ -1,22 +1,22 @@
 <div class="profile-container">
   <div class="row mb-5">
-    <h1>Welcome <%= current_user.email %></h1>
+    <h1>Welcome <%= current_user.username %></h1>
   </div>
   <div class="row">
     <div class="col">
-      <div class="profile stats created">
+      <div class="profilex stats created">
         <h3>Decks Created</h3>
         <p><%= @decks.count %></p>
       </div>
     </div>
     <div class="col">
-      <div class="profile stats upvoted">
+      <div class="profilex stats upvoted">
         <h3>Decks Upvoted</h3>
         <p><strong><%= @upvoted_decks.count %></strong> </p>
       </div>
     </div>
     <div class="col">
-      <div class="profile stats reviewed">
+      <div class="profilex stats reviewed">
         <h3>Decks Reviewed</h3>
         <p><%= @reviews.count %></p>
       </div>
@@ -24,7 +24,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <div class="profile lists">
+      <div class="profilex lists">
         <h4>Own decks</h4>
         <% if @decks.count > 1 %>
             <% @decks.first(10).each do |deck| %>
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="profile lists">
+      <div class="profilex lists">
         <h4>Upvoted decks</h4>
         <% if @upvoted_decks.count > 1 %>
           <ul>
@@ -59,7 +59,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="profile lists">
+      <div class="profilex lists">
         <h4>What you've just studied...</h4>
         <ul>
           <% @history.each do |deck| %>
@@ -72,11 +72,11 @@
   <div class="row mb-5">
     <div class="col-4">
       <% if @decks.count > 1 %>
-        <div class="profile top-decks">
+        <div class="profilex top-decks">
           <p><strong>Total Upvotes</strong></p>
           <h1><strong><%= @upvotes.sum %></strong></h1>
         </div>
-        <div class="profile decks-up">
+        <div class="profilex decks-up">
           <h3>Top 3 decks you've created:</h3>
           <ol>
             <% @good_decks.sort_by(&:upvotes).reverse.first(3).each do |deck| %>
@@ -87,7 +87,7 @@
       <% end %>
     </div>
     <div class="col-8">
-      <div class="profile last-reviews">
+      <div class="profilex last-reviews">
         <h2>Last Reviews</h2>
         <% if @reviews.count > 1 %>
           <ul>
