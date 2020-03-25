@@ -1,25 +1,15 @@
-.categories-banner {
-  background: linear-gradient(-226deg, rgba(43, 43, 43, 0.49) 31%, rgba(143, 0, 255, 0.38) 62%, rgba(255, 255, 255, 0.934611) 10028%), url(banner/banner-girl-books2.png);
-  background-size: cover;
-  width: 100%;
-  z-index: 0;
-  background-repeat: no-repeat;
-  background-color: #353547;
-  display: flex;
-  height: 100vh;
-}
-
 .category-index {
   display: flex;
   text-align: center;
   -webkit-box-align: center;
   align-items: center;
   padding-right: 130px;
-  padding-top: 60px;
+  padding-bottom: 24px;
   background-color: #3535472e;
   height: 540px;
-  border-radius: 5px;
-  box-shadow: 4px 5px 17px rgba(10,10,10,0.2);
+  border-radius: 8px;
+  box-shadow: 0px 0px 19px 5px #47525d73;
+  z-index: 0;
 
   h1 {
     color: $black;
@@ -32,10 +22,10 @@
 }
 
 .form-group {
-  justify-content: center;
-  flex-wrap: wrap;
+  // justify-content: center;
+  // flex-wrap: wrap;
+  // justify-content: center;
   max-height: 260px;
-  justify-content: center;
   margin-bottom: 80px;
   margin-top: 16px;
 }
@@ -82,13 +72,15 @@
     &:hover {
       background-color: $light-purple;
       cursor: pointer;
+
     }
 
     .form-check-label {
       color: white;
-      font-family: $a-p-font;
+      font-family: $h1-h2-font;
       font-weight: bold;
-      //z-index: -1;
+      z-index: -1;
+
       &:hover {
         cursor: pointer;
       }
@@ -98,7 +90,7 @@
   .form-check-input {
     display: none;
     margin: 0px;
-    z-index: 1;
+    // z-index: -1;
   }
 }
 
@@ -110,6 +102,10 @@
   background-color: rgba(143, 0, 255, 0.7) !important;
   color: white !important;
   // z-index: 1;
+
+  .form-check-label {
+    -webkit-text-fill-color: yellow;
+  }
 
 }
 

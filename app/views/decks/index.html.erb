@@ -11,25 +11,32 @@
 
           <%= link_to deck_path(deck), class: "deck-link bd-highlight" do %>
             <div class="card mb-4 deck-card" style="background-image: url(<%= url_for(deck.category.photo_url) %>)">
+              <div class="deck-bg">
                 <div class="card-body deck-body">
 
-                  <div class="deck-title bd-highlight">
-                    <h3 class="card-title"><%= deck.name %></h3>
+                  <div class="deck-title">
+                    <p class="card-title m-0"><%= deck.category.name %></p>
                   </div>
 
-                  <div class="reviews d-flex justify-content-center" style="position: relative; right: 30px; top: 35px; margin-left: 60px;">
-                    <div class="upvote deck-upvote">
-                      <span ><i class="fas fa-sort-up"></i></span>
-                      <p><%= deck.upvotes %></p>
-                    </div>
-
-                    <div class="downvote deck-upvote">
-                      <span ><i class="fas fa-sort-down"></i></span>
-                      <p> <%= deck.downvotes %></p>
-                    </div>
+                  <div class="deck-title bd-highlight">
+                    <h3 class="card-title m-0"><%= deck.name %></h3>
                   </div>
 
                 </div>
+              </div>
+
+              <div class="reviews">
+                <div class="upvote deck-upvote">
+                  <%= image_tag "arrow_upvote.svg", alt: "alttext", style: "font-color: green;" %>
+                  <p><%= deck.upvotes %></p>
+                </div>
+
+                <div class="downvote deck-upvote">
+                  <%= image_tag "arrow_downvote.svg", alt: "alttext", style: "font-color: red;" %>
+                  <p> <%= deck.downvotes %></p>
+                </div>
+              </div>
+
             </div>
           <% end %>
         <% end %>

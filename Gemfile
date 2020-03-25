@@ -14,6 +14,8 @@ gem "chartkick"
 gem 'minimist'
 gem "cocoon"
 
+gem 'cloudinary', '~> 1.12.0'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'
