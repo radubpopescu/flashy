@@ -61,17 +61,19 @@
     background-color: transparent;
     width: 192.38px;
     height: 55px;
-    box-shadow: 0px 0px 4px rgba(20, 20, 20, 0.25);
-    border-radius: 50px;
+    box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.25);
+    border-radius: 2px 9px 2px 9px;;
     border-style: double;
     margin: 24px 12px;
     align-items: center;
     padding-left: 0px;
-    color: $purple;
+    color: #7b00ff;
+    transition: 0.2s;
 
     &:hover {
-      background-color: $light-purple;
+      background-color: rgba(143,0,254,0.1);
       cursor: pointer;
+
 
     }
 
@@ -101,10 +103,15 @@
 .purple {
   background-color: rgba(143, 0, 255, 0.7) !important;
   color: white !important;
+  transition: 0.4s;
   // z-index: 1;
 
   .form-check-label {
-    -webkit-text-fill-color: yellow;
+    -webkit-text-fill-color: white;
+    z-index: 2;
+    letter-spacing: 1px;
+    transition: 0.2s;
+
   }
 
 }
