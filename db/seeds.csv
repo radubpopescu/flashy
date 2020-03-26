@@ -4,4 +4,3 @@ Question,Answer
 "What is the purpose of writing pseudocode?","It's a good way to have programatic thinking without caring about syntax. Writing pseudocode can have clearer instructions before we write the real codes"
 "What position properties remove an element from the normal document flow?","position: absolute and position: fixed"
 "What's the difference between document.getElementById and document.querySelectorAll?","document.getElementsByClassName - Returns an array-like object of all child elements which have all of the given class names. document.querySelectorAll - Returns a list of the elements within the document that match the specified group of selectors. The object returned is a nodelist."
-
