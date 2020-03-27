@@ -1,3 +1,12 @@
+.add-card {
+  padding: 42px 45px 52px 45px;
+  border-radius: 2px 26px 2px 26px;
+  width: 100%;
+  margin-top: 5px;
+  box-shadow: 0px -3px 4px 0px #13131324;
+  // min-height: 56vh;
+}
+
 .reviews {
   display: flex;
   justify-content: space-around;
@@ -11,8 +20,8 @@
 
 
 .deck-bg {
-  background: #FFFFFF;
-  opacity: 0.85;
+  background: #E7E6E7;
+  opacity: 0.96;
   border-radius: 2px 2px 2px 12px;
   margin: 65px -10px -45px -10px;
   min-width: 100%;
@@ -35,14 +44,13 @@
   padding: 5px 10px;
   width: 300px;
   height: 210px;
-  background: #FFFFFF;
-  border: 3px solid #353547;
+  border: 3px solid #1D143A;
   box-shadow: 0px 4px 4px #8f00ff29;
   border-radius: 2px 14px 2px 14px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: grayscale(0.6) hue-rotate(-30deg);
+  // filter: grayscale(0.6) hue-rotate(-30deg);
 
 
   .deck-body {
@@ -182,7 +190,7 @@
   background: linear-gradient(180deg, rgba(143, 0, 255, 0.58) 0%, #8F00FF 100%);
 }
 .upvoted{
-  background: linear-gradient(180deg, rgba(44, 44, 44, 0.6) 0%, #2C2C2C 100%);
+  background: linear-gradient(180deg, rgba(44, 44, 44, 0.6) 0%, $navbar 100%);
 }
 .reviewed{
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, #FFFFFF 100%);
@@ -204,8 +212,8 @@
   }
 }
 .profile-container{
-  margin: 115px 0px 50px 400px;
-  width: 1085px;
+  // margin: 115px 0px 50px 400px;
+  // width: 1085px;
 }
 .last-reviews{
   background: #FFFFFF;

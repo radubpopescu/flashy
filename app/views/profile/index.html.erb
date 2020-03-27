@@ -1,111 +1,116 @@
-<div class="profile-container">
-  <div class="row mb-5">
-    <h1>Welcome <%= current_user.username %></h1>
-  </div>
+<div class="container">
   <div class="row">
-    <div class="col">
-      <div class="profilex stats created">
-        <h3>Decks Created</h3>
-        <p><%= @decks.count %></p>
+    <div class="profile-container">
+      <div class="row mb-5 mt-5" style="padding-left: 16px;">
+        <h1>Welcome <%= current_user.username %></h1>
       </div>
-    </div>
-    <div class="col">
-      <div class="profilex stats upvoted">
-        <h3>Decks Upvoted</h3>
-        <p><strong><%= @upvoted_decks.count %></strong> </p>
-      </div>
-    </div>
-    <div class="col">
-      <div class="profilex stats reviewed">
-        <h3>Decks Reviewed</h3>
-        <p><%= @reviews.count %></p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <div class="profilex lists">
-        <h4>Own decks</h4>
-        <% if @decks.count > 1 %>
-            <% @decks.first(10).each do |deck| %>
-              <li><%= link_to deck.name, deck_path(deck) %></li>
-            <% end -%>
-          </ul>
-          <% if @decks.count > 10 %>
-            <%= link_to 'see more', '#' %>
-          <% end %>
-        <% else %>
-          <p>Nothing here yet!</p>
-          <%= link_to 'Create your own deck!', new_deck_path %>
-        <% end %>
-          <ul>
-      </div>
-    </div>
-    <div class="col">
-      <div class="profilex lists">
-        <h4>Upvoted decks</h4>
-        <% if @upvoted_decks.count > 1 %>
-          <ul>
-            <% @upvoted_decks.first(10).each do |deck| %>
-              <li><%= link_to deck.name, deck_path(deck) %></li>
-            <% end -%>
-          </ul>
-          <% if @upvoted_decks.count > 10 %>
-            <%= link_to 'see more', '#' %>
-          <% end %>
-        <% else %>
-        <p>You haven't upvoted a deck yet!</p>
-        <% end %>
-      </div>
-    </div>
-    <div class="col">
-      <div class="profilex lists">
-        <h4>What you've just studied...</h4>
-        <ul>
-          <% @history.each do |deck| %>
-            <li><%= link_to deck.name, deck_path(deck) %></li>
-          <% end -%>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="row mb-5">
-    <div class="col-4">
-      <% if @decks.count > 1 %>
-        <div class="profilex top-decks">
-          <p><strong>Total Upvotes</strong></p>
-          <h1><strong><%= @upvotes.sum %></strong></h1>
+      <div class="row">
+        <div class="col">
+          <div class="profilex stats created">
+            <h3>Decks Created</h3>
+            <p><%= @decks.count %></p>
+          </div>
         </div>
-        <div class="profilex decks-up">
-          <h3>Top 3 decks you've created:</h3>
-          <ol>
-            <% @good_decks.sort_by(&:upvotes).reverse.first(3).each do |deck| %>
-              <li><%= deck.name %></li>
-            <% end -%>
-          </ol>
+        <div class="col">
+          <div class="profilex stats upvoted">
+            <h3>Decks Upvoted</h3>
+            <p><strong><%= @upvoted_decks.count %></strong> </p>
+          </div>
         </div>
-      <% end %>
-    </div>
-    <div class="col-8">
-      <div class="profilex last-reviews">
-        <h2>Last Reviews</h2>
-        <% if @reviews.count > 1 %>
-          <ul>
-            <% @reviews.first(5).each do |review| %>
-              <p><%= link_to review.deck.name , deck_path(review.deck) %>
-              <% if review.review_value == 1 %>
-                  (upvote!)
-                <% else %>
-                  (downvote!)
+        <div class="col">
+          <div class="profilex stats reviewed">
+            <h3>Decks Reviewed</h3>
+            <p><%= @reviews.count %></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="profilex lists">
+            <h4>Own decks</h4>
+            <% if @decks.count > 1 %>
+                <% @decks.first(10).each do |deck| %>
+                  <li><%= link_to deck.name, deck_path(deck) %></li>
+                <% end -%>
+              </ul>
+              <% if @decks.count > 10 %>
+                <%= link_to 'see more', '#' %>
               <% end %>
-              </p>
-              <li>"<%= review.content %>"</li>
-            <% end -%>
-          </ul>
-        <% else %>
-          <p>No review yet!</p>
-        <% end %>
+            <% else %>
+              <p>Nothing here yet!</p>
+              <%= link_to 'Create your own deck!', new_deck_path %>
+            <% end %>
+              <ul>
+          </div>
+        </div>
+        <div class="col">
+          <div class="profilex lists">
+            <h4>Upvoted decks</h4>
+            <% if @upvoted_decks.count > 1 %>
+              <ul>
+                <% @upvoted_decks.first(10).each do |deck| %>
+                  <li><%= link_to deck.name, deck_path(deck) %></li>
+                <% end -%>
+              </ul>
+              <% if @upvoted_decks.count > 10 %>
+                <%= link_to 'see more', '#' %>
+              <% end %>
+            <% else %>
+            <p>You haven't upvoted a deck yet!</p>
+            <% end %>
+          </div>
+        </div>
+        <div class="col">
+          <div class="profilex lists">
+            <h4>What you've just studied...</h4>
+            <ul>
+              <% @history.each do |deck| %>
+                <li><%= link_to deck.name, deck_path(deck) %></li>
+              <% end -%>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-5">
+        <div class="col-4">
+          <% if @decks.count > 1 %>
+            <div class="profilex top-decks">
+              <p><strong>Total Upvotes</strong></p>
+              <h1><strong><%= @upvotes.sum %></strong></h1>
+            </div>
+            <div class="profilex decks-up">
+              <h3>Top 3 decks you've created:</h3>
+              <ol>
+                <% @good_decks.sort_by(&:upvotes).reverse.first(3).each do |deck| %>
+                  <li><%= deck.name %></li>
+                <% end -%>
+              </ol>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-8">
+          <div class="profilex last-reviews">
+            <h2>Last Reviews</h2>
+            <% if @reviews.count > 1 %>
+              <ul>
+                <% @reviews.first(5).each do |review| %>
+                  <p><%= link_to review.deck.name , deck_path(review.deck) %>
+                  <% if review.review_value == 1 %>
+                      (upvote!)
+                    <% else %>
+                      (downvote!)
+                  <% end %>
+                  </p>
+                  <li>"<%= review.content %>"</li>
+                <% end -%>
+              </ul>
+            <% else %>
+              <p>No review yet!</p>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </div>

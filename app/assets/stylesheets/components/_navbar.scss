@@ -1,8 +1,8 @@
 .navbar-flashy {
   justify-content: space-between;
-  background-color: #353547;
-  max-height: 85px;
-  box-shadow: -2px 1px 2px 4px #353547;
+  background-color: $navbar;
+  max-height: 64px;
+  box-shadow: -1px 3px 2px 4px #35354712;
 }
 
 .navbar-flashy .navbar-collapse {
