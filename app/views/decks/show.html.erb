@@ -35,6 +35,7 @@
       <h2>Reviews (<%= @reviews.where.not(content: nil).count %>)</h2>
       <% @reviews.each do |review| %>
           <div class="comment">
+          <h6 class="avatar" style="background-color:<%= @colors[rand(0..19)] %>"><%= review.user.username.upcase.chars[0] %></h6>
           <h6><strong><%= review.user.username %></strong></h6>
           <p>"<%= review.content %>"</p>
           </div>
