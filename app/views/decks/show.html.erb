@@ -4,26 +4,32 @@
   <div class="row">
     <div class="col-12 mt-4">
       <h1><%= @deck.name %></h1>
-      <% if @deck.user == current_user %>
-        <%= link_to edit_deck_path(@deck) do %>
-          <i class="fas fa-edit fa"></i>
-        <% end %>
-        <%= link_to deck_path(@deck), method: :delete, data: {confirm: 'Delete the deck?'} do %>
-          <i class="fas fa-trash fa"></i>
-        <% end %>
-      <% end %>
       <p>Category: <strong><%= @deck.category.name.capitalize %></strong></p>
       <p>Number of cards in the deck: <%= @deck.cards.count %></p>
       <p><%= @deck.description %></p>
 
       </br>
-        <%= link_to 'Play', deck_start_playing_path(@deck), class: 'btn btn-primary btn-lg' %>
+
+      <%= link_to 'Play', deck_start_playing_path(@deck), class: 'btn btn-primary' %>
+      <% if @deck.user == current_user %>
+        <%= link_to 'Add card', new_deck_card_path(@deck), class: 'btn btn-secondary' %>
+      <% end %>
+      <% if @deck.card_answers.where(user: current_user).any? %>
+        <%= link_to 'See results', deck_results_path(@deck), class: 'btn btn-secondary' %>
+      <% end %>
+
+      <div class="edit-buttons mt-4">
         <% if @deck.user == current_user %>
-          <%= link_to 'Add card', new_deck_card_path(@deck), class: 'btn btn-secondary btn-lg' %>
+          <%= link_to edit_deck_path(@deck) do %>
+            <i class="fas fa-edit fa"></i>
+          <% end %>
+          <%= link_to deck_path(@deck), method: :delete, data: {confirm: 'Delete the deck?'} do %>
+            <i class="fas fa-trash fa"></i>
+          <% end %>
         <% end %>
-        <% if @deck.card_answers.where(user: current_user).any? %>
-          <%= link_to 'See results', deck_results_path(@deck), class: 'btn btn-secondary btn-lg' %>
-        <% end %>
+
+      </div>
+
       <p class="mt-4">Flashcards made by <%= @deck.user.username %></p>
 
       <h2>Reviews (<%= @reviews.where.not(content: nil).count %>)</h2>

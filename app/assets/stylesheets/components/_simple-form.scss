@@ -3,21 +3,21 @@
   text-align: center;
   -webkit-box-align: center;
   align-items: center;
-  padding-right: 130px;
+  // padding-right: 130px;
   padding-bottom: 24px;
   background-color: #3535472e;
   height: 540px;
-  border-radius: 8px;
+  border-radius: 2px 26px 2px 26px;
   box-shadow: 0px 0px 19px 5px #47525d73;
   z-index: 0;
 
   h1 {
-    color: $black;
+    color: #cccccc;
     font-family: $h1-h2-font;
     font-size: 45px;
     letter-spacing: 0.01em;
     margin-top: 50px;
-    border-color: rgba(1, 123, 255, 0.5);
+    border-color: lightgrey;
   }
 }
 
@@ -104,7 +104,6 @@
   background-color: rgba(143, 0, 255, 0.7) !important;
   color: white !important;
   transition: 0.4s;
-  // z-index: 1;
 
   .form-check-label {
     -webkit-text-fill-color: white;

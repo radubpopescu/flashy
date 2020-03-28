@@ -10,8 +10,7 @@
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 70px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-
-  box-shadow: 4px 0px 23px rgba(143, 0, 255, 0.55);
+  box-shadow: -4px -6px 9px rgba(143, 0, 255, 0.55);
 }
 
 /* The sidebar links */
@@ -19,7 +18,7 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: $black;
+  color: $white;
   display: block;
   transition: 0.2s;
 }
@@ -27,7 +26,7 @@
 /* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
   // color: rgb(43,43,43);
-  background-color: $purple;
+  background-color: $white;
 }
 
 
@@ -43,12 +42,22 @@
 
 #mySidebar {
   font-family: $a-p-font;
-  // color: black;
+  background-color: $navbar;
   font-weight: bold;
-
+  position: fixed;
+  height: -webkit-fill-available;
+  padding-top: 104px;
 }
 
 #menu-bar-open {
   cursor: pointer;
   color: white;
+  padding-bottom: 8px;
+  img {
+    width: 54px;
+    // height: 45px;
+    filter: invert(0.2);
+    // transform: rotate(180deg);
+
+  }
 }

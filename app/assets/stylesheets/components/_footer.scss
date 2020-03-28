@@ -2,6 +2,11 @@
   margin-left: -16px;
 }
 
+.logo-footer-img {
+  width: 100%;
+  height: 42px;
+}
+
 .fa-bolt:hover {
   color: $purple;
 }
@@ -9,7 +14,7 @@
 .footer {
   width:100%;
   // margin-bottom: 0px;
-  background: #353547;
+  background: $navbar;
   color: white;
   position: relative;
   z-index: 2;
@@ -27,9 +32,8 @@
 
   .links {
     font-family: $a-p-font;
-    // letter-spacing: 0.07rem;
     text-align: left;
-    padding: 16px 0px 10px 233px;
+    padding: 0px 0px 0px 78px;
 
     p {
       font-size: 24px;
@@ -59,7 +63,7 @@
 
 .copyright {
   font-family: $a-p-font;
-  margin-top: 71px;
+  margin-top: 64px;
   margin-bottom: 0px;
   display: inline-table;
   text-align: center;
