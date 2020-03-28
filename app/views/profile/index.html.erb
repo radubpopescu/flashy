@@ -91,6 +91,7 @@
         <% if @reviews.count >= 1 %>
           <ul>
             <% @reviews.last(5).reverse.each do |review| %>
+            <% if review.content != "" %>
               <p><%= link_to review.deck.name , deck_path(review.deck) %>
               <% if review.review_value == 1 %>
                   (upvote!)
@@ -100,6 +101,7 @@
               </p>
               <li>"<%= review.content %>"</li>
             <% end -%>
+            <% end %>
           </ul>
         <% else %>
           <p>No review yet!</p>
