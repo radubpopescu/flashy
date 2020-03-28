@@ -1,39 +1,44 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartkick/2.3.0/chartkick.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
-<div class="container content">
-  <div class="row">
-    <div class="col-12 mt-4">
-      <div class="row">
-        <div class="d-flex">
-          <div class="results">
-            <h1 class="mb-4"><strong>Results for <%= @deck.name %>:</strong></h1>
-            <% data = [["Correct", @results_positive],
-                      ["Wrong", @results_negative]] %>
+<div class="container">
+    <h1 class="text-center" style="margin-top: 100px; margin-bottom: 30px;">Results for <%= @deck.name %></h1>
+  <div class="row row-graph">
+    <div class="col-8 mt-4">
+      <div class="d-flex justify-content-center">
+        <div class="results">
+
+          <% data = [["Correct", @results_positive],
+                    ["Wrong", @results_negative]] %>
+          <div class="chart-position pr-2">
             <%= pie_chart data,colors:["#8f00ff","#2c2c2c"], library: { pieSliceText: 'value' } %>
           </div>
-          <div class="feedback">
-            <strong>
-              Total: <%= @results_positive + @results_negative %>
-            </strong>
-            <% if @results_positive > @results_negative %>
-              <p>Wooooooowwwww maaan, really impressive 😲</p>
-            <% else %>
-              <p>Wow! I've never seen something like that...</p>
-            <% end %>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-4 mt-4">
+        <div class="results-btn">
             <% if @deck.wrong_answers.any? %>
               <%= link_to "Re-try wrong ones", deck_start_playing_path(@deck, wrong: true),id: "buttons", class: 'btn btn-primary btn-lg'  %>
             <% end %>
-            <%= link_to "Play again", deck_start_playing_path(@deck, wrong: false),id: "buttons", class: 'btn btn-secondary btn-lg' %>
-            <%= link_to "Return to Deck", deck_path(@deck),id: "buttons", class: 'btn btn-secondary btn-lg' %>
+            <%= link_to "Play again", deck_start_playing_path(@deck, wrong: false),id: "buttons", class: 'btn btn-menu btn-lg' %>
+            <%= link_to "Return to Deck", deck_path(@deck),id: "buttons", class: 'btn btn-menu btn-lg' %>
           </div>
-        </div>
       </div>
-      <div class="row">
-        <div class="review mt-4">
-          <h2>Leave a review:</h2>
-          <%= render 'reviews/form', deck: @deck, review: @review %>
-        </div>
+      <div class="results-text" style="padding-left: 28px;">
+        <strong>
+          <%= @results_positive + @results_negative %> cards played
+        </strong>
+        <% if @results_positive > @results_negative %>
+          <p>Wooooooowwwww maaan, really impressive 😲</p>
+        <% else %>
+          <p>Wow! I've never seen something like that...</p>
+        <% end %>
       </div>
+    </div>
+    <div class="review mt-4">
+      <h2>Leave a review:</h2>
+      <%= render 'reviews/form', deck: @deck, review: @review %>
     </div>
   </div>
 </div>
