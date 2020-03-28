@@ -35,12 +35,14 @@
 
               <div class="reviews">
                 <div class="upvote deck-upvote">
-                  <%= image_tag "arrow_upvote.svg", alt: "alttext", style: "font-color: green;" %>
+                  <i class="far fa-thumbs-up"></i>
+
                   <p><%= deck.upvotes %></p>
                 </div>
 
                 <div class="downvote deck-upvote">
-                  <%= image_tag "arrow_downvote.svg", alt: "alttext", style: "font-color: red;" %>
+                  <i class="far fa-thumbs-down"></i>
+
                   <p> <%= deck.downvotes %></p>
                 </div>
               </div>

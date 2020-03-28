@@ -255,10 +255,18 @@
   padding-bottom: 30px;
 }
 
-.upvote p {
-  color: #00b300;
+// .upvote p {
+//   color: #00b300;
+// }
+
+// .downvote p {
+//   color: red;
+// }
+
+.fa-thumbs-up {
+  color: $green;
 }
 
-.downvote p {
-  color: red;
+.fa-thumbs-down {
+  color: $orange;
 }
