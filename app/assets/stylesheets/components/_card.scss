@@ -53,8 +53,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  // filter: grayscale(0.6) hue-rotate(-30deg);
-
+  background: linear-gradient(45deg, #353547, #35354700);
 
   .deck-body {
     display: flex;
@@ -254,4 +253,12 @@
     font-style:italic;
   }
   padding-bottom: 30px;
+}
+
+.upvote p {
+  color: #00b300;
+}
+
+.downvote p {
+  color: red;
 }
