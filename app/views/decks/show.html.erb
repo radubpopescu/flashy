@@ -34,11 +34,23 @@
 
       <h2>Reviews (<%= @reviews.where.not(content: nil).count %>)</h2>
       <% @reviews.each do |review| %>
-          <div class="comment">
+          <div class="comment d-flex">
             <% if review.content != "" %>
-              <h6 class="avatar" style="background-color:<%= @colors[rand(0..19)] %>"><%= review.user.username.upcase.chars[0] %></h6>
-              <h6><strong><%= review.user.username %></strong></h6>
+            <div>
+              <% if review.user.username %>
+                <h6 class="avatar" style="background-color:<%= @colors[rand(0..19)] %>"><%= review.user.username.upcase.chars[0] %></h6>
+              <% else %>
+                <h6 class="avatar" style="background-color:<%= @colors[rand(0..19)] %>"><%= review.user.email.upcase.chars[0] %></h6>
+              <% end %>
+            </div>
+            <div>
+              <% if review.user.username %>
+                <h6><strong><%= review.user.username %></strong></h6>
+              <% else %>
+                <h6><strong><%= review.user.email %></strong></h6>
+              <% end %>
               <p>"<%= review.content %>"</p>
+            </div>
             <% end %>
           </div>
       <% end -%>
