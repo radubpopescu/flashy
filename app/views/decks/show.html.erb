@@ -32,8 +32,8 @@
 
       <p class="mt-4">Flashcards made by <%= @deck.user.username %></p>
 
-      <h2>Reviews (<%= @reviews.where.not(content: nil).count %>)</h2>
-      <% @reviews.each do |review| %>
+      <h2 class="mb-4">Reviews (<%= @reviews.where.not(content: nil).count %>)</h2>
+      <% @reviews.reverse.each do |review| %>
           <div class="comment d-flex">
             <% if review.content != "" %>
             <div>

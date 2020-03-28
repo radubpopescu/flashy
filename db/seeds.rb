@@ -92,6 +92,6 @@ end
 
 puts "creating user Radu Popescu"
 user_01 = User.create!(email: "radu@gmail.com", password: "123456", username: "Radu")
-puts "created Bernardo Goes"
+puts "created Radu Popescu"
 
 puts 'done'
