@@ -43,6 +43,8 @@
   transition: .3s;
   background-color: #353547ba;
   border-color: #353547;
+  width: 140px;
+  padding-top: 8px;
 }
 
 .btn-danger{
@@ -61,14 +63,14 @@
 }
 .botoes{
   background-color: white;
-  height: 50px;
-  width: 260px;
+  width: 280px;
   position: absolute;
-  box-shadow: 0 0 30px 0 #d1d1d1;
   overflow: hidden;
-  top: 550px;
-  box-shadow: 0 4px 8px rgba(0,0,0,.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  display: flex;
+  padding-bottom: 46px;
+  margin-top: 19px;
 }
 
 input[type="radio"]{

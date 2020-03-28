@@ -1,6 +1,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartkick/2.3.0/chartkick.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
-
 <div class="container content">
   <div class="row">
     <div class="col-12 mt-4">
@@ -10,7 +9,7 @@
             <h1 class="mb-4"><strong>Results for <%= @deck.name %>:</strong></h1>
             <% data = [["Correct", @results_positive],
                       ["Wrong", @results_negative]] %>
-            <%= pie_chart data, library: { pieSliceText: 'value' } %>
+            <%= pie_chart data,colors:["#8f00ff","#2c2c2c"], library: { pieSliceText: 'value' } %>
           </div>
           <div class="feedback">
             <strong>

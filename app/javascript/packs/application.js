@@ -18,4 +18,5 @@ if (flipCards) {
 };
 
 
-require("chartkick").use(require("highcharts"))
+require("chartkick").use(require("highcharts"));
+
