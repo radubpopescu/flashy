@@ -8,14 +8,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.create(content: review_params[:content], review_value: review_params[:review_value].to_i, deck_id: @deck.id, user_id: current_user.id)
+    @review = Review.create(content: review_params[:content], review_value: review_params[:value].to_i, deck_id: @deck.id, user_id: current_user.id)
     redirect_to deck_path(@deck)
   end
 
   private
 
   def review_params
-    params.permit(:content, :review_value)
+    params.require(:review).permit(:content, :value)
   end
 
   def set_deck
