@@ -1,30 +1,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartkick/2.3.0/chartkick.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
-<div class="container content">
+<div class="container">
   <div class="row">
     <div class="col-12 mt-4">
-      <div class="row">
-        <div class="d-flex">
-          <div class="results">
-            <h1 class="mb-4"><strong>Results for <%= @deck.name %>:</strong></h1>
-            <% data = [["Correct", @results_positive],
-                      ["Wrong", @results_negative]] %>
+      <div class="d-flex justify-content-center">
+        <div class="results">
+          <h1 class="mb-4 text-center"><strong>Results for <%= @deck.name %>:</strong></h1>
+          <% data = [["Correct", @results_positive],
+                    ["Wrong", @results_negative]] %>
+          <div class="chart-position">
             <%= pie_chart data,colors:["#8f00ff","#2c2c2c"], library: { pieSliceText: 'value' } %>
           </div>
-          <div class="feedback">
-            <strong>
-              Total: <%= @results_positive + @results_negative %>
-            </strong>
-            <% if @results_positive > @results_negative %>
-              <p>Wooooooowwwww maaan, really impressive 😲</p>
-            <% else %>
-              <p>Wow! I've never seen something like that...</p>
-            <% end %>
-            <% if @deck.wrong_answers.any? %>
-              <%= link_to "Re-try wrong ones", deck_start_playing_path(@deck, wrong: true),id: "buttons", class: 'btn btn-primary btn-lg'  %>
-            <% end %>
-            <%= link_to "Play again", deck_start_playing_path(@deck, wrong: false),id: "buttons", class: 'btn btn-secondary btn-lg' %>
-            <%= link_to "Return to Deck", deck_path(@deck),id: "buttons", class: 'btn btn-secondary btn-lg' %>
+          <strong>
+            Total: <%= @results_positive + @results_negative %>
+          </strong>
+          <% if @results_positive > @results_negative %>
+            <p>Wooooooowwwww maaan, really impressive 😲</p>
+          <% else %>
+            <p>Wow! I've never seen something like that...</p>
+          <% end %>
+          <% if @deck.wrong_answers.any? %>
+            <%= link_to "Re-try wrong ones", deck_start_playing_path(@deck, wrong: true),id: "buttons", class: 'btn btn-primary btn-lg'  %>
+          <% end %>
+          <%= link_to "Play again", deck_start_playing_path(@deck, wrong: false),id: "buttons", class: 'btn btn-secondary btn-lg' %>
+          <%= link_to "Return to Deck", deck_path(@deck),id: "buttons", class: 'btn btn-secondary btn-lg' %>
           </div>
         </div>
       </div>
