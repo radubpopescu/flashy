@@ -1,12 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-12 mt-4">
-    <h1>Create card for <%= @deck.name %>:</h1>
-    <p>
-      <strong><%= @deck.cards.count %> cards</strong> in the deck
-    </p>
-    <%= render 'form', deck: @deck, card: @card %>
-    <%= link_to 'Back to deck', deck_path(@deck), class: "btn btn-secondary mt-4" %>
+      <div class="card add-card">
+        <h1>Create card for <%= @deck.name %>:</h1>
+        <p>
+          <strong><%= @deck.cards.count %> cards</strong> in the deck
+        </p>
+        <%= render 'form', deck: @deck, card: @card %>
+        <%= link_to 'Back to deck', deck_path(@deck), class: "btn btn-secondary mt-4" %>
+
+      </div>
     </div>
   </div>
 </div>
