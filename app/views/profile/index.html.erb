@@ -45,7 +45,7 @@
         <h4>Upvoted decks</h4>
         <% if @upvoted_decks.count >= 1 %>
           <ul>
-            <% @upvoted_decks.first(10).each do |deck| %>
+            <% @upvoted_decks.first(10).reverse.each do |deck| %>
               <li><%= link_to deck.name, deck_path(deck) %></li>
             <% end -%>
           </ul>
@@ -90,7 +90,7 @@
         <h2>Last Reviews</h2>
         <% if @reviews.count >= 1 %>
           <ul>
-            <% @reviews.first(5).each do |review| %>
+            <% @reviews.last(5).reverse.each do |review| %>
               <p><%= link_to review.deck.name , deck_path(review.deck) %>
               <% if review.review_value == 1 %>
                   (upvote!)
