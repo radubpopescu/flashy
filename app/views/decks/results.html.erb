@@ -10,7 +10,7 @@
             <h1 class="mb-4"><strong>Results for <%= @deck.name %>:</strong></h1>
             <% data = [["Correct", @results_positive],
                       ["Wrong", @results_negative]] %>
-            <%= pie_chart data, library: { pieSliceText: 'value' } %>
+            <%= pie_chart data,colors:["#8f00ff","#2c2c2c"], library: { pieSliceText: 'value' } %>
           </div>
           <div class="feedback">
             <strong>
