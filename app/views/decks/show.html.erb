@@ -49,7 +49,14 @@
               <% else %>
                 <h6><strong><%= review.user.email %></strong></h6>
               <% end %>
-              <p>"<%= review.content %>"</p>
+              <p>
+                "<%= review.content %>"
+                <% if review.review_value == 1 %>
+                  <i class="far fa-thumbs-up"></i>
+                <% else %>
+                  <i class="far fa-thumbs-down"></i>
+                <% end %>
+              </p>
             </div>
             <% end %>
           </div>
