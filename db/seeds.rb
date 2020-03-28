@@ -92,7 +92,6 @@ end
 
 puts "creating user Bernardo Goes"
 user_01 = User.create!(email: "bernardo@gmail.com", password: "123456", username: "Bernardo")
-FavoriteCategory.create!(user: user_01, category: bio)
 puts "created Bernardo Goes"
 
 puts 'done'
