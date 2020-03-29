@@ -18,13 +18,12 @@
   color: white;
   width: 244px;
   height: 51px;
-  position: absolute;
-  top:250px;
-  left:200px;
+  top: 320px;
   border: 0;
   transition: .3s;
   text-align: center;
   line-height: 50px;
+  position: absolute;
   &:hover{
     background-color: #7502CE;
   }
