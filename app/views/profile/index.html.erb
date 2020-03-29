@@ -60,6 +60,9 @@
     <div class="col">
       <div class="profilex lists">
         <h4>What you've just studied...</h4>
+
+        <%= link_to "Edit Profile", edit_user_registration_path %>
+
         <ul>
           <% @history.each do |deck| %>
             <li><%= link_to deck.name, deck_path(deck) %></li>
