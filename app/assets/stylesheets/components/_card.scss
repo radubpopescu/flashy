@@ -48,12 +48,13 @@
   width: 300px;
   height: 210px;
   border: 3px solid $navbar;
-  box-shadow: 0px 4px 4px #8f00ff29;
+  // box-shadow: 0px 4px 4px #8f00ff29;
   border-radius: 2px 14px 2px 14px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background: linear-gradient(45deg, #353547, #35354700);
+  // background: linear-gradient(45deg, #353547, #35354700);
+  filter: drop-shadow(0px 0px 2px black);
 
   .deck-body {
     display: flex;
