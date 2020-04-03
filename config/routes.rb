@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :favorite_categories, only: [:new, :create]
   devise_for :users
   resources :profile, only: %i[index]
+  get "jokes" , to: "jokes#index"
 end
