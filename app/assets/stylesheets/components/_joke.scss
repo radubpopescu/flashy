@@ -1,0 +1,27 @@
+.joke {
+  margin-top: 40px;
+  width: 490px;
+  height: 560px;
+}
+
+.click-joke {
+  color: red !important;
+  font-size: 24px !important;
+  height: 40px;
+  padding: 2px 11px !important;
+  &:hover {
+    border-radius: 10px;
+    background: rgba(254,0,0,0.3) !important;
+  }
+
+}
+
+.btn-joke {
+  border: double;
+  margin: 0px 37px 0px 29px;
+  border-color: red;
+  margin-top: 80px;
+  border-radius: 11px;
+  font-style: italic;
+  font-variant-caps: all-small-caps;
+}
